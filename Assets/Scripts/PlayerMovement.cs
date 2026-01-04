@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TarodevController
 {
@@ -203,5 +204,24 @@ namespace TarodevController
             if (_stats == null) Debug.LogWarning("Please assign a ScriptableStats asset to the Player Controller's Stats slot", this);
         }
 #endif
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Spike"))
+            {
+                Debug.Log(name + " hit a spike!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Current Scene restart
+            }
+
+            if (collision.CompareTag("Goal"))
+            {
+                var spriteRenderer = GetComponent<SpriteRenderer>();
+                if(spriteRenderer != null) spriteRenderer.enabled = false;
+
+                if (_rb.simulated) _rb.simulated = false;
+
+                enabled = false;
+            }
+        }
     }
 }
