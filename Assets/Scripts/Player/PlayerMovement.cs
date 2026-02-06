@@ -52,7 +52,7 @@ namespace TarodevController
         {
             _time += Time.deltaTime;
             GatherInput();
-            _sm.Tick(Time.deltaTime);
+            //_sm.Tick(Time.deltaTime);
         }
 
         private void GatherInput()
@@ -93,6 +93,16 @@ namespace TarodevController
         private float _frameLeftGrounded = float.MinValue;
         [NonSerialized] public bool grounded;
 
+        //private void OnCollisionEnter2D(Collision2D collision)
+        //{
+        //    if (!collision.collider.CompareTag("Platform"))
+        //    {
+        //        // Hit a Ceiling
+        //        bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
+        //        if (ceilingHit) frameVelocity.y = Mathf.Min(0, frameVelocity.y);
+        //    }
+        //}
+
         private void CheckCollisions()
         {
             Physics2D.queriesStartInColliders = false;
@@ -124,6 +134,8 @@ namespace TarodevController
             Physics2D.queriesStartInColliders = _cachedQueryStartInColliders;
         }
 
+
+        
         #endregion
 
 

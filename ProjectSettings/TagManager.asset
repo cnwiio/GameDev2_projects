@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spike
   - Goal
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -13,11 +14,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - Player
+  - Player1
+  - Player2
   - Ground
-  - 
-  - 
+  - Ground1
+  - Ground2
   - 
   - 
   - 
