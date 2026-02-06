@@ -226,7 +226,9 @@ namespace TarodevController
             }
 
             if (collision.CompareTag("Goal"))
-            {
+            { 
+                var goal = collision.GetComponent<Goal>();
+                if (!goal.IsReached) return;
                 var spriteRenderer = GetComponent<SpriteRenderer>();
                 if(spriteRenderer != null) spriteRenderer.enabled = false;
 
