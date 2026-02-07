@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using TarodevController;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,12 +7,24 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
-    public Goal goal1;
-    public Goal goal2;
-    public bool IsGoNextLVL;
-    public string SceneName;
+    [Header("Swap Settings")]
+    [SerializeField] private SwapBox swapBox1;
+    [SerializeField] private SwapBox swapBox2;
+    private bool isSwapped = false;
+
+    #region Goal
+    [Header("Goal Settings")]
+    [SerializeField] private Goal goal1;
+    [SerializeField] private Goal goal2;
+    [Header("Level Settings")]
+    [SerializeField] private bool IsGoNextLVL;
+    [SerializeField] private string SceneName;
     private bool db = false;
     private byte currentLVL, nextLVL;
+    #endregion
+
+    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +36,12 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        LevelTransition();
+        SwapPlayer();
+    }
+
+    private void LevelTransition()
     {
         if (db) return;
 
@@ -46,12 +65,12 @@ public class GameManager : MonoBehaviour
 
                 SceneManager.LoadScene(SceneName);
                 return;
-            } 
+            }
             else
             {
                 SaveStageReached(nextLVL);
                 SceneManager.LoadScene(nextLVL);
-            }       
+            }
         }
     }
 
@@ -67,6 +86,21 @@ public class GameManager : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("CurrentStage", stage);
+        }
+    }
+
+    private void SwapPlayer()
+    {
+        if (swapBox1.isReady && swapBox2.isReady && !isSwapped)
+        {
+            //Debug.Log("Swapping Players!");
+            isSwapped = true;
+            swapBox1.SetTarget(swapBox2.player);
+            swapBox2.SetTarget(swapBox1.player);
+            Vector3 tempPosition = swapBox1.player.transform.position;
+            swapBox1.SwapToPos(swapBox2.player.transform.position);
+            swapBox2.SwapToPos(tempPosition);
+            isSwapped = false; 
         }
     }
 

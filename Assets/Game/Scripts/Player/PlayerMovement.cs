@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace TarodevController
 {
@@ -231,15 +232,42 @@ namespace TarodevController
             { 
                 var goal = collision.GetComponent<Goal>();
                 if (!goal.IsReached) return;
-                var spriteRenderer = GetComponent<SpriteRenderer>();
-                if(spriteRenderer != null) spriteRenderer.enabled = false;
-
-                if (_rb.simulated) _rb.simulated = false;
-
-                if (transform.childCount > 0)
-                    transform.GetChild(0).gameObject.SetActive(false);
+                ToggleEnble(false);
 
                 //enabled = false;
+            }
+        }
+
+        public void ToggleEnble(bool value)
+        {
+            if (value)
+                EnablePlayer();
+            else
+                DisablePlayer();
+        }
+
+        private void DisablePlayer()
+        {
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null) spriteRenderer.enabled = false;
+
+            if (_rb.simulated) _rb.simulated = false;
+
+            if (transform.childCount > 0)
+                transform.GetChild(0).gameObject.SetActive(false);
+        }
+
+        private void EnablePlayer()
+        {
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null) spriteRenderer.enabled = true;
+
+            if (!_rb.simulated) _rb.simulated = true;
+
+            if (transform.childCount > 0)
+            {
+                if (spriteRenderer != null) spriteRenderer.enabled = false;
+                transform.GetChild(0).gameObject.SetActive(true);
             }
         }
     }
