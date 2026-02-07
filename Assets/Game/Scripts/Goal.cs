@@ -5,7 +5,6 @@ public class Goal : MonoBehaviour
 {
     [NonSerialized] public bool IsReached = false;
     [SerializeField] private GoalKey key;
-    private bool isOpen = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -22,7 +22,8 @@ public class GoalKey : MonoBehaviour
         {
             Debug.Log("Goal Key Collected!");
             isCollected = true;
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }

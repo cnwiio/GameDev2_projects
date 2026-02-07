@@ -106,10 +106,12 @@ namespace TarodevController
         private void CheckCollisions()
         {
             Physics2D.queriesStartInColliders = false;
+            LayerMask mask = LayerMask.GetMask("Ground", "Ground1", "Ground2");
+
 
             // Ground and Ceiling
             bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
-            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, mask);
 
             // Hit a Ceiling
             if (ceilingHit) frameVelocity.y = Mathf.Min(0, frameVelocity.y);
@@ -234,7 +236,10 @@ namespace TarodevController
 
                 if (_rb.simulated) _rb.simulated = false;
 
-                enabled = false;
+                if (transform.childCount > 0)
+                    transform.GetChild(0).gameObject.SetActive(false);
+
+                //enabled = false;
             }
         }
     }

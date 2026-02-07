@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Both goals reached! Stage Win!");
             //Debug.Log("Current Scene Index: " + buildIndex);
 
+            Task.WaitAll(Task.Delay(500)); // Wait for 0.5 second before loading next scene
             if (!IsGoNextLVL)
             {
                 SaveStageReached(currentLVL);
