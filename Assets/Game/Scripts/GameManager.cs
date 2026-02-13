@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
 
     private void SwapPlayer()
     {
+        if (swapBox1 == null || swapBox2 == null) return;
         if (swapBox1.isReady && swapBox2.isReady && !isSwapped)
         {
             //Debug.Log("Swapping Players!");

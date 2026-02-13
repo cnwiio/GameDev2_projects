@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,6 +28,8 @@ namespace TarodevController
 
         public bool IsDebug = false;
 
+        [NonSerialized] public Animator animator;
+
         #region Interface
 
         public Vector2 FrameInput => _frameInput.Move;
@@ -41,6 +45,7 @@ namespace TarodevController
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
             _sm = new PlayerStateMachine();
+            if(GetComponent<Animator>() != null)animator = GetComponent<Animator>();
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
         }
 
@@ -84,6 +89,8 @@ namespace TarodevController
 
             HandleJump();
             HandleDirection();
+            FlipSprite();
+            HandleAnimation();
             HandleGravity();
 
             ApplyMovement();
@@ -191,6 +198,14 @@ namespace TarodevController
             }
         }
 
+        private void FlipSprite()
+        {
+            if (_frameInput.Move.x > 0)
+                transform.localScale = new Vector3(-1, 1, 1);
+            else if (_frameInput.Move.x < 0)
+                transform.localScale = new Vector3(1, 1, 1);
+        }
+
         #endregion
 
         #region Gravity
@@ -211,6 +226,15 @@ namespace TarodevController
 
         #endregion
 
+        private void HandleAnimation()
+        {
+            if(animator == null) return;
+            animator.SetFloat("xVelocity", Math.Abs(frameVelocity.x));
+            animator.SetFloat("yVelocity", frameVelocity.y);
+            animator.SetBool("isJumping", !grounded);
+
+        }
+
         private void ApplyMovement() => _rb.linearVelocity = frameVelocity;
 
 #if UNITY_EDITOR
@@ -225,7 +249,10 @@ namespace TarodevController
             if (collision.CompareTag("Spike"))
             {
                 Debug.Log(name + " hit a spike!");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Current Scene restart
+                if (animator != null) animator.SetTrigger("Death");
+                if (_rb.simulated) _rb.simulated = false;
+                StartCoroutine(RestartSceneAfterDelay(1f));
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Current Scene restart
             }
 
             if (collision.CompareTag("Goal"))
@@ -269,6 +296,13 @@ namespace TarodevController
                 if (spriteRenderer != null) spriteRenderer.enabled = false;
                 transform.GetChild(0).gameObject.SetActive(true);
             }
+        }
+
+        private IEnumerator RestartSceneAfterDelay(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("Restarting Scene...");
         }
     }
 }
