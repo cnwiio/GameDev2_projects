@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 1abf1d927d9bc3441919b32b63fd4929
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246762
+  packageName: Folder In Hierarchy
+  packageVersion: 1.0
+  assetPath: Assets/Utility/TheAAA/Folder In Hierarchy/Editor/MenuItemFolder.cs
+  uploadId: 574801
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,10 +16,3 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 246762
-  packageName: Folder In Hierarchy
-  packageVersion: 1.0
-  assetPath: Assets/Utility/TheAAA/Folder In Hierarchy/Editor/MenuItemFolder.cs
-  uploadId: 574801

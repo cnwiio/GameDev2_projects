@@ -118,7 +118,7 @@ namespace TarodevController
 
 
             // Ground and Ceiling
-            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, mask/*~_stats.PlayerLayer*/);
             bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, mask);
 
             // Hit a Ceiling
@@ -201,9 +201,9 @@ namespace TarodevController
         private void FlipSprite()
         {
             if (_frameInput.Move.x > 0)
-                transform.localScale = new Vector3(-1, 1, 1);
-            else if (_frameInput.Move.x < 0)
                 transform.localScale = new Vector3(1, 1, 1);
+            else if (_frameInput.Move.x < 0)
+                transform.localScale = new Vector3(-1, 1, 1);
         }
 
         #endregion
@@ -252,16 +252,6 @@ namespace TarodevController
                 if (animator != null) animator.SetTrigger("Death");
                 if (_rb.simulated) _rb.simulated = false;
                 StartCoroutine(RestartSceneAfterDelay(1f));
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Current Scene restart
-            }
-
-            if (collision.CompareTag("Goal"))
-            { 
-                var goal = collision.GetComponent<Goal>();
-                if (!goal.IsReached) return;
-                ToggleEnble(false);
-
-                //enabled = false;
             }
         }
 
@@ -280,6 +270,7 @@ namespace TarodevController
 
             if (_rb.simulated) _rb.simulated = false;
 
+            if (transform.childCount > 0) Debug.Log("Disabling Child Sprite");
             if (transform.childCount > 0)
                 transform.GetChild(0).gameObject.SetActive(false);
         }

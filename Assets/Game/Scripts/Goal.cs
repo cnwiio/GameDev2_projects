@@ -1,4 +1,5 @@
 using System;
+using TarodevController;
 using UnityEngine;
 
 public class Goal : MonoBehaviour
@@ -23,6 +24,7 @@ public class Goal : MonoBehaviour
             if (CanOpen() == false) return;
             //Debug.Log("Goal reached!");
             //Debug.Log(collision.gameObject.name + " Has Reached the Goal!");
+            collision.GetComponent<PlayerMovement>().ToggleEnble(false);
             IsReached = true;
         }
     }

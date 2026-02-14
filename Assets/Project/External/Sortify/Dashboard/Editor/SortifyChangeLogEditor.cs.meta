@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: a3ae7f55e09c89b4e9b2de50536a6603
+AssetOrigin:
+  serializedVersion: 1
+  productId: 301537
+  packageName: Sortify
+  packageVersion: 1.35
+  assetPath: Assets/Sortify/Dashboard/Editor/SortifyChangeLogEditor.cs
+  uploadId: 758539
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,10 +16,3 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 301537
-  packageName: Sortify
-  packageVersion: 1.35
-  assetPath: Assets/Sortify/Dashboard/Editor/SortifyChangeLogEditor.cs
-  uploadId: 758539

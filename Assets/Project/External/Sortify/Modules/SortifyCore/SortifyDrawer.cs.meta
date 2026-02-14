@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 51e85bfc07a22524c9bb660ec6745826
+AssetOrigin:
+  serializedVersion: 1
+  productId: 301537
+  packageName: Sortify
+  packageVersion: 1.35
+  assetPath: Assets/Sortify/Modules/SortifyCore/SortifyDrawer.cs
+  uploadId: 758539
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,10 +16,3 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 301537
-  packageName: Sortify
-  packageVersion: 1.35
-  assetPath: Assets/Sortify/Modules/SortifyCore/SortifyDrawer.cs
-  uploadId: 758539

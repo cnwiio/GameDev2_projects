@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386e5e87aafb51c43aa4e4b8023a9864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  swapBox1: {fileID: 0}
+  swapBox2: {fileID: 0}
   goal1: {fileID: 0}
   goal2: {fileID: 0}
   IsGoNextLVL: 0

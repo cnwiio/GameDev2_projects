@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: a07d57111176dfc4da6e628fb2928c21
+AssetOrigin:
+  serializedVersion: 1
+  productId: 301537
+  packageName: Sortify
+  packageVersion: 1.35
+  assetPath: Assets/Sortify/Modules/SortifyAttributes/ButtonAttribute.cs
+  uploadId: 758539
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,10 +16,3 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 301537
-  packageName: Sortify
-  packageVersion: 1.35
-  assetPath: Assets/Sortify/Modules/SortifyAttributes/ButtonAttribute.cs
-  uploadId: 758539

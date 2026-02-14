@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 4ca6165ededeaa84fa32bb30b3efda94
+AssetOrigin:
+  serializedVersion: 1
+  productId: 291337
+  packageName: FolderColor
+  packageVersion: 2.0
+  assetPath: Assets/FolderColor/Editor/CustomWindowFileImage.cs
+  uploadId: 709671
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,10 +16,3 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 291337
-  packageName: FolderColor
-  packageVersion: 2.0
-  assetPath: Assets/FolderColor/Editor/CustomWindowFileImage.cs
-  uploadId: 709671
