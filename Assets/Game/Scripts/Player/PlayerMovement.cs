@@ -27,6 +27,7 @@ namespace TarodevController
         private PlayerStateMachine _sm;
 
         public bool IsDebug = false;
+        [SerializeField] bool GodMode = false;
 
         [NonSerialized] public Animator animator;
 
@@ -249,12 +250,14 @@ namespace TarodevController
             if (collision.CompareTag("Spike"))
             {
                 Debug.Log(name + " hit a spike!");
+                if (GodMode) return;
                 if (animator != null) animator.SetTrigger("Death");
                 if (_rb.simulated) _rb.simulated = false;
-                StartCoroutine(RestartSceneAfterDelay(1f));
+                StartCoroutine(RestartSceneAfterDelay(0.75f));
             }
         }
 
+        #region Toggle Player
         public void ToggleEnble(bool value)
         {
             if (value)
@@ -288,6 +291,7 @@ namespace TarodevController
                 transform.GetChild(0).gameObject.SetActive(true);
             }
         }
+        #endregion
 
         private IEnumerator RestartSceneAfterDelay(float waitTime)
         {
