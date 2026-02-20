@@ -28,6 +28,7 @@ namespace TarodevController
 
         public bool IsDebug = false;
         [SerializeField] bool GodMode = false;
+        [SerializeField] bool IsFacingLeft = false;
 
         [NonSerialized] public Animator animator;
 
@@ -202,9 +203,9 @@ namespace TarodevController
         private void FlipSprite()
         {
             if (_frameInput.Move.x > 0)
-                transform.localScale = new Vector3(1, 1, 1);
+                GetComponent<SpriteRenderer>().flipX = IsFacingLeft;
             else if (_frameInput.Move.x < 0)
-                transform.localScale = new Vector3(-1, 1, 1);
+                GetComponent<SpriteRenderer>().flipX = !IsFacingLeft;
         }
 
         #endregion

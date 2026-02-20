@@ -172,6 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TarodevController.PlayerMovement
   _stats: {fileID: 11400000, guid: 2b02087c54a1cbc42a3ea75bb0e7eaa2, type: 2}
   IsDebug: 0
+  GodMode: 0
+  IsFacingLeft: 1
 --- !u!95 &4668356925602795065
 Animator:
   serializedVersion: 7
