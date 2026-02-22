@@ -254,7 +254,7 @@ namespace TarodevController
                 if (GodMode) return;
                 if (animator != null) animator.SetTrigger("Death");
                 if (_rb.simulated) _rb.simulated = false;
-                StartCoroutine(RestartSceneAfterDelay(0.75f));
+                StartCoroutine(RestartSceneAfterDelay(1.25f));
             }
         }
 
@@ -274,9 +274,9 @@ namespace TarodevController
 
             if (_rb.simulated) _rb.simulated = false;
 
-            if (transform.childCount > 0) Debug.Log("Disabling Child Sprite");
-            if (transform.childCount > 0)
-                transform.GetChild(0).gameObject.SetActive(false);
+            //if (transform.childCount > 0) Debug.Log("Disabling Child Sprite");
+            //if (transform.childCount > 0)
+            //    transform.GetChild(0).gameObject.SetActive(false);
         }
 
         private void EnablePlayer()
@@ -286,11 +286,11 @@ namespace TarodevController
 
             if (!_rb.simulated) _rb.simulated = true;
 
-            if (transform.childCount > 0)
-            {
-                if (spriteRenderer != null) spriteRenderer.enabled = false;
-                transform.GetChild(0).gameObject.SetActive(true);
-            }
+            //if (transform.childCount > 0)
+            //{
+            //    if (spriteRenderer != null) spriteRenderer.enabled = false;
+            //    transform.GetChild(0).gameObject.SetActive(true);
+            //}
         }
         #endregion
 
