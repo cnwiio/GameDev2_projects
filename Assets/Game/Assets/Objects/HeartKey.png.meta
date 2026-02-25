@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 5ed511ff68d5eec46a43966f09121bf8
+guid: 2539e783f2539b343a823ef4cf548c95
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2918188820937180186
-    second: DogJump-Sheet_0
-  - first:
-      213: -371587375563026127
-    second: DogJump-Sheet_1
-  - first:
-      213: 6884148298126523912
-    second: DogJump-Sheet_2
-  - first:
-      213: 6794999448110519381
-    second: DogJump-Sheet_3
+      213: 3264856623637082869
+    second: HeartKey_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -135,89 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DogJump-Sheet_0
+      name: HeartKey_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 18
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a140a7b754d7f7820800000000000000
-      internalID: 2918188820937180186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DogJump-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 131db8c204bd7daf0800000000000000
-      internalID: -371587375563026127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DogJump-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 80ef0f24768698f50800000000000000
-      internalID: 6884148298126523912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DogJump-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5545a912fffac4e50800000000000000
-      internalID: 6794999448110519381
+      spriteID: 5f2387e1dc91f4d20800000000000000
+      internalID: 3264856623637082869
       vertices: []
       indices: 
       edges: []
@@ -226,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8faffe6b93930624a9c02f6386a3fc4b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -234,14 +159,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":18.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      DogJump-Sheet_0: 2918188820937180186
-      DogJump-Sheet_1: -371587375563026127
-      DogJump-Sheet_2: 6884148298126523912
-      DogJump-Sheet_3: 6794999448110519381
+      HeartKey_0: 3264856623637082869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

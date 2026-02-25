@@ -13,13 +13,6 @@ MonoBehaviour:
   m_Name: CustomToolbarSettings
   m_EditorClassIdentifier: CustomToolbar::OpalStudio.CustomToolbar.Editor.Core.Data.ToolbarConfiguration
   groups:
-  - groupName: Version Control
-    side: 0
-    elements:
-    - name: OpalStudio.CustomToolbar.Editor.ToolbarElements.ToolbarGitStatus, CustomToolbar,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      isEnabled: 1
-    isEnabled: 1
   - groupName: Utilities
     side: 0
     elements:
@@ -39,6 +32,16 @@ MonoBehaviour:
         CustomToolbar, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       isEnabled: 1
     isEnabled: 1
+  - groupName: Controls
+    side: 1
+    elements:
+    - name: OpalStudio.CustomToolbar.Editor.ToolbarElements.ToolbarFpsSlider, CustomToolbar,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      isEnabled: 1
+    - name: OpalStudio.CustomToolbar.Editor.ToolbarElements.ToolbarTimeSlider, CustomToolbar,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      isEnabled: 1
+    isEnabled: 1
   - groupName: Scenes
     side: 0
     elements:
@@ -53,16 +56,6 @@ MonoBehaviour:
       isEnabled: 1
     - name: OpalStudio.CustomToolbar.Editor.ToolbarElements.ToolbarLayerVisibility,
         CustomToolbar, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      isEnabled: 1
-    isEnabled: 1
-  - groupName: Controls
-    side: 1
-    elements:
-    - name: OpalStudio.CustomToolbar.Editor.ToolbarElements.ToolbarFpsSlider, CustomToolbar,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      isEnabled: 1
-    - name: OpalStudio.CustomToolbar.Editor.ToolbarElements.ToolbarTimeSlider, CustomToolbar,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       isEnabled: 1
     isEnabled: 1
   - groupName: Debugging
