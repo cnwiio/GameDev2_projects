@@ -242,6 +242,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1577884363}
     - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 1861228182}
+    - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1642918446}
+    - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
       propertyPath: SceneName
       value: Level5
       objectReference: {fileID: 0}
@@ -3937,6 +3945,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d49676a24dedc248a0c53a3fe554da9, type: 3}
+--- !u!114 &1642918446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8329397268974829093, guid: 5d49676a24dedc248a0c53a3fe554da9, type: 3}
+  m_PrefabInstance: {fileID: 1642918445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8542acad61ca3d84f861e157448c223f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TarodevController.PlayerMovement
 --- !u!1001 &1646743415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3945,6 +3964,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3237203989676691590, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca24052b401945c4986ba034c04019fd, type: 3}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5398377
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4498850077042811075, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_Name
       value: Goal 2
@@ -4117,6 +4156,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f2a17083fcd2948b2f1a58aa824add, type: 3}
+--- !u!114 &1861228182 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8329397268974829093, guid: f3f2a17083fcd2948b2f1a58aa824add, type: 3}
+  m_PrefabInstance: {fileID: 1861228181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8542acad61ca3d84f861e157448c223f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TarodevController.PlayerMovement
 --- !u!1001 &1867258862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4191,6 +4241,26 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1204437147}
+    - target: {fileID: 3237203989676691590, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c3ce7428679a17847b9aa96987df82d7, type: 3}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5349202
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0046922863
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4498850077042811075, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_Name
       value: Goal 1

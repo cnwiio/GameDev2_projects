@@ -52,5 +52,11 @@ namespace TarodevController
 
         [Tooltip("The amount of time we buffer a jump. This allows jump input before actually hitting the ground")]
         public float JumpBuffer = .2f;
+
+        [Tooltip("How close to the jump's peak we must be before apex assistance activates. Higher values create longer hang time near the top of the jump.")]
+        public float JumpApexThreshold = 3f;
+
+        [Tooltip("Extra horizontal control added while near the jump apex. Higher values make mid-air movement easier and more responsive.")]
+        public float ApexBonus = 5f;
     }
 }

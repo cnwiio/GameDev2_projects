@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using TarodevController;
 using UnityEditor;
@@ -7,6 +8,10 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Player")]
+    [SerializeField] private PlayerMovement player1;
+    [SerializeField] private PlayerMovement player2;
+
     [Header("Swap Settings")]
     [SerializeField] private SwapBox swapBox1;
     [SerializeField] private SwapBox swapBox2;
@@ -22,8 +27,11 @@ public class GameManager : MonoBehaviour
     private bool db = false;
     private byte currentLVL, nextLVL;
     #endregion
+    [Header("Transition")]
+    [SerializeField] private Animator fadeAnimator;
+    [SerializeField] private float transitionTime;
 
-    
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,8 +47,10 @@ public class GameManager : MonoBehaviour
     {
         LevelTransition();
         SwapPlayer();
+        ResetPlayer();
     }
 
+    #region Scene Handling
     private void LevelTransition()
     {
         if (db) return;
@@ -68,10 +78,22 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                SaveStageReached(nextLVL);
-                SceneManager.LoadScene(nextLVL);
+                StartCoroutine(Playtransition());
             }
         }
+    }
+
+    private void LoadNextScene()
+    {
+        SaveStageReached(nextLVL);
+        SceneManager.LoadScene(nextLVL);
+    }
+
+    private IEnumerator Playtransition()
+    {
+        fadeAnimator.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime); // Wait for the animation to finish
+        LoadNextScene();
     }
 
     private void SaveStageReached(byte stage)
@@ -88,7 +110,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("CurrentStage", stage);
         }
     }
-
+    #endregion
     private void SwapPlayer()
     {
         if (swapBox1 == null || swapBox2 == null) return;
@@ -105,6 +127,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void ResetPlayer()
+    {
+        if (player1 == null || player2 == null) return;
+
+        if (player1.isWaitToReset || player2.isWaitToReset)
+        {
+            player1.isWaitToReset = true;
+            player2.isWaitToReset = true;
+        }
+
+        //if (player1.readyToReset)
+        //{
+        //    if (player2.readyToReset) return;
+        //    player1.ResetPlayer();
+        //    player2.ResetPlayer();
+        //}
+        //else if (player2.readyToReset)
+        //{
+        //    if (player1.readyToReset) return;
+        //    player1.ResetPlayer();
+        //    player2.ResetPlayer();
+        //}
+
+        if (player1.readyToReset || player2.readyToReset)
+        {
+            player1.ResetPlayer();
+            player2.ResetPlayer();
+        }
+    }
     private void Quit()
     {
 

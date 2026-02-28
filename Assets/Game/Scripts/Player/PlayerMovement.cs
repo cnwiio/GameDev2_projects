@@ -32,6 +32,10 @@ namespace TarodevController
 
         [NonSerialized] public Animator animator;
 
+        [NonSerialized] public bool readyToReset = false;
+        [NonSerialized] public bool isWaitToReset = false;
+        private Vector3 intialPos;
+
         #region Interface
 
         public Vector2 FrameInput => _frameInput.Move;
@@ -54,6 +58,8 @@ namespace TarodevController
         private void Start()
         {
             _sm.ChangeState(new IdleState(_stats, _sm, this));
+            _intialGravityScale = _rb.gravityScale;
+            intialPos = transform.localPosition;
         }
 
         private void Update()
@@ -83,6 +89,11 @@ namespace TarodevController
                 jumpToConsume = true;
                 _timeJumpWasPressed = _time;
             }
+
+            if (Input.GetKeyDown(KeyCode.F1))
+            {
+                GodMode = !GodMode;
+            }
         }
 
         private void FixedUpdate()
@@ -101,6 +112,7 @@ namespace TarodevController
         #region Collisions
 
         private float _frameLeftGrounded = float.MinValue;
+        private float _intialGravityScale;
         [NonSerialized] public bool grounded;
 
         //private void OnCollisionEnter2D(Collision2D collision)
@@ -116,15 +128,19 @@ namespace TarodevController
         private void CheckCollisions()
         {
             Physics2D.queriesStartInColliders = false;
-            LayerMask mask = LayerMask.GetMask("Ground", "Ground1", "Ground2");
+            LayerMask cellingmask = LayerMask.GetMask("Ground", "Ground1", "Ground2");
+            LayerMask groundmask = LayerMask.GetMask("Ground", "Ground1", "Ground2","Platform");
 
 
             // Ground and Ceiling
-            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, mask/*~_stats.PlayerLayer*/);
-            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, mask);
+            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, groundmask/*~_stats.PlayerLayer*/);
+            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, cellingmask);
 
-            // Hit a Ceiling
-            if (ceilingHit) frameVelocity.y = Mathf.Min(0, frameVelocity.y);
+            if (ceilingHit)
+            {
+                //Debug.Log("Ceiling Hit Detected");
+                frameVelocity.y = Mathf.Min(0, frameVelocity.y);
+            }
 
             // Landed on the Ground
             if (!grounded && groundHit)
@@ -141,6 +157,15 @@ namespace TarodevController
                 grounded = false;
                 _frameLeftGrounded = _time;
                 GroundedChanged?.Invoke(false, 0);
+            }
+
+            if (grounded)
+            {
+                _rb.gravityScale = 0;
+            }
+            else
+            {
+                _rb.gravityScale = _intialGravityScale;
             }
 
             Physics2D.queriesStartInColliders = _cachedQueryStartInColliders;
@@ -254,7 +279,10 @@ namespace TarodevController
                 if (GodMode) return;
                 if (animator != null) animator.SetTrigger("Death");
                 if (_rb.simulated) _rb.simulated = false;
-                StartCoroutine(RestartSceneAfterDelay(1.25f));
+                if(isWaitToReset) return;
+                isWaitToReset = true;
+                //Debug.Log("Player will reset in 2 seconds...");
+                StartCoroutine(RestartPlayerAfterDelay(2f));
             }
         }
 
@@ -273,10 +301,6 @@ namespace TarodevController
             if (spriteRenderer != null) spriteRenderer.enabled = false;
 
             if (_rb.simulated) _rb.simulated = false;
-
-            //if (transform.childCount > 0) Debug.Log("Disabling Child Sprite");
-            //if (transform.childCount > 0)
-            //    transform.GetChild(0).gameObject.SetActive(false);
         }
 
         private void EnablePlayer()
@@ -285,20 +309,26 @@ namespace TarodevController
             if (spriteRenderer != null) spriteRenderer.enabled = true;
 
             if (!_rb.simulated) _rb.simulated = true;
+        }
 
-            //if (transform.childCount > 0)
-            //{
-            //    if (spriteRenderer != null) spriteRenderer.enabled = false;
-            //    transform.GetChild(0).gameObject.SetActive(true);
-            //}
+        public void ResetPlayer()
+        {
+            isWaitToReset = false;
+            readyToReset = false;
+            frameVelocity = Vector2.zero;
+            transform.localPosition = intialPos;
+            if (animator != null) animator.SetTrigger("Reset");
+            ToggleEnble(true);
         }
         #endregion
 
-        private IEnumerator RestartSceneAfterDelay(float waitTime)
+        public IEnumerator RestartPlayerAfterDelay(float waitTime)
         {
             yield return new WaitForSeconds(waitTime);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Debug.Log("Restarting Scene...");
+            isWaitToReset = false;
+            readyToReset = true;
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //Debug.Log("Restarting Scene...");
         }
     }
 }

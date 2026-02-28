@@ -579,6 +579,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f2a17083fcd2948b2f1a58aa824add, type: 3}
+--- !u!114 &838121619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8329397268974829093, guid: f3f2a17083fcd2948b2f1a58aa824add, type: 3}
+  m_PrefabInstance: {fileID: 838121618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8542acad61ca3d84f861e157448c223f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TarodevController.PlayerMovement
 --- !u!1001 &845706479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5851,6 +5862,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3237203989676691590, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca24052b401945c4986ba034c04019fd, type: 3}
+    - target: {fileID: 3237203989676691590, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_SortingLayer
       value: 8
       objectReference: {fileID: 0}
@@ -5862,6 +5877,22 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -211123041
       objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5243018
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0053499937
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4498850077042811075, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_Name
       value: Goal 2
@@ -5872,7 +5903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6965744476195582863, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6965744476195582863, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6035,6 +6066,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3237203989676691590, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c3ce7428679a17847b9aa96987df82d7, type: 3}
+    - target: {fileID: 3237203989676691590, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
@@ -6046,6 +6081,22 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1616434469
       objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5136017
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.010700047
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4498850077042811075, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_Name
       value: Goal 1
@@ -6056,7 +6107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6965744476195582863, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6965744476195582863, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6163,6 +6214,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d49676a24dedc248a0c53a3fe554da9, type: 3}
+--- !u!114 &1718641919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8329397268974829093, guid: 5d49676a24dedc248a0c53a3fe554da9, type: 3}
+  m_PrefabInstance: {fileID: 1718641918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8542acad61ca3d84f861e157448c223f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TarodevController.PlayerMovement
 --- !u!1001 &1832199667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6223,6 +6285,14 @@ PrefabInstance:
       propertyPath: goal2
       value: 
       objectReference: {fileID: 1140099147}
+    - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 838121619}
+    - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1718641919}
     - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
       propertyPath: IsGoNextLVL
       value: 1

@@ -30,3 +30,5 @@ MonoBehaviour:
   JumpEndEarlyGravityModifier: 3
   CoyoteTime: 0.15
   JumpBuffer: 0.1
+  JumpApexThreshold: 2
+  ApexBonus: 50

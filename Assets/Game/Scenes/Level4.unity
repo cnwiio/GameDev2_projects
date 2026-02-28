@@ -355,6 +355,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 591566947}
     - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 1207822240}
+    - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 2048506474}
+    - target: {fileID: 8115897681965409926, guid: d91169855d4f64f4e86a94d483b72bb3, type: 3}
       propertyPath: SceneName
       value: Level4
       objectReference: {fileID: 0}
@@ -3274,6 +3282,22 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -211123041
       objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5174527
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4498850077042811075, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_Name
       value: Goal 2
@@ -3582,6 +3606,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f2a17083fcd2948b2f1a58aa824add, type: 3}
+--- !u!114 &1207822240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8329397268974829093, guid: f3f2a17083fcd2948b2f1a58aa824add, type: 3}
+  m_PrefabInstance: {fileID: 1207822239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8542acad61ca3d84f861e157448c223f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TarodevController.PlayerMovement
 --- !u!1001 &1209218141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4710,6 +4745,22 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1616434469
       objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5056766
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.016138613
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775199776608543673, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4498850077042811075, guid: 29445e47c5055404e90251dbe641b89a, type: 3}
       propertyPath: m_Name
       value: Goal 1
@@ -4936,6 +4987,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d49676a24dedc248a0c53a3fe554da9, type: 3}
+--- !u!114 &2048506474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8329397268974829093, guid: 5d49676a24dedc248a0c53a3fe554da9, type: 3}
+  m_PrefabInstance: {fileID: 2048506473}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8542acad61ca3d84f861e157448c223f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TarodevController.PlayerMovement
 --- !u!4 &2070791131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 402588259161951123, guid: 0d2ddd66b70ffee4d88ce44916fcf811, type: 3}
