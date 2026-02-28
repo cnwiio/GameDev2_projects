@@ -8,6 +8,7 @@ TagManager:
   - Spike
   - Goal
   - Platform
+  - Potion
   layers:
   - Default
   - TransparentFX

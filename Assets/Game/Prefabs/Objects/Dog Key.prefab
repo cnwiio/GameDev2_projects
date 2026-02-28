@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4496724879307310285}
   - component: {fileID: 3455994121184195971}
   m_Layer: 0
-  m_Name: Girl Key
+  m_Name: Dog Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,10 +90,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -211123041
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2539e783f2539b343a823ef4cf548c95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0edfcfe2b449a0445b7ae20834bb03c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

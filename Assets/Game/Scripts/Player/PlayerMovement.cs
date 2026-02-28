@@ -21,6 +21,7 @@ namespace TarodevController
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
         private FrameInput _frameInput;
+        private float oppositeValue = 1;
         [NonSerialized] public Vector2 frameVelocity;
         private bool _cachedQueryStartInColliders;
 
@@ -31,10 +32,6 @@ namespace TarodevController
         [SerializeField] bool IsFacingLeft = false;
 
         [NonSerialized] public Animator animator;
-
-        [NonSerialized] public bool readyToReset = false;
-        [NonSerialized] public bool isWaitToReset = false;
-        private Vector3 intialPos;
 
         #region Interface
 
@@ -59,7 +56,6 @@ namespace TarodevController
         {
             _sm.ChangeState(new IdleState(_stats, _sm, this));
             _intialGravityScale = _rb.gravityScale;
-            intialPos = transform.localPosition;
         }
 
         private void Update()
@@ -221,7 +217,7 @@ namespace TarodevController
             }
             else
             {
-                frameVelocity.x = Mathf.MoveTowards(frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
+                frameVelocity.x = Mathf.MoveTowards(frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed * oppositeValue, _stats.Acceleration * Time.fixedDeltaTime);
             }
         }
 
@@ -279,10 +275,15 @@ namespace TarodevController
                 if (GodMode) return;
                 if (animator != null) animator.SetTrigger("Death");
                 if (_rb.simulated) _rb.simulated = false;
-                if(isWaitToReset) return;
-                isWaitToReset = true;
-                //Debug.Log("Player will reset in 2 seconds...");
-                StartCoroutine(RestartPlayerAfterDelay(2f));
+                StartCoroutine(RestartScenesAfterDelay(1.25f));
+            }
+
+            if (collision.CompareTag("Potion"))
+            {
+                Debug.Log(name + " hit a potion!");
+                oppositeValue *= -1;
+                IsFacingLeft = !IsFacingLeft;
+                Destroy(collision.gameObject);
             }
         }
 
@@ -310,25 +311,13 @@ namespace TarodevController
 
             if (!_rb.simulated) _rb.simulated = true;
         }
-
-        public void ResetPlayer()
-        {
-            isWaitToReset = false;
-            readyToReset = false;
-            frameVelocity = Vector2.zero;
-            transform.localPosition = intialPos;
-            if (animator != null) animator.SetTrigger("Reset");
-            ToggleEnble(true);
-        }
         #endregion
 
-        public IEnumerator RestartPlayerAfterDelay(float waitTime)
+        public IEnumerator RestartScenesAfterDelay(float waitTime)
         {
             yield return new WaitForSeconds(waitTime);
-            isWaitToReset = false;
-            readyToReset = true;
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            //Debug.Log("Restarting Scene...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("Restarting Scene...");
         }
     }
 }

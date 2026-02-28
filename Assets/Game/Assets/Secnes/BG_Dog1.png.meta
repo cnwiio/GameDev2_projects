@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5140944101c569d479db864d4a20e5f7
+guid: a8a96bd67bc21f4449dd03dd6a0d26f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8840869773734088916
-    second: BG_Dog1_0
+      213: -2821836102108491637
+    second: BG_Dog12_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_Dog1_0
+      name: BG_Dog12_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 456
-        height: 150
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2f671f18cbee4580800000000000000
-      internalID: -8840869773734088916
+      spriteID: b80537f0403d6d8d0800000000000000
+      internalID: -2821836102108491637
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BG_Dog1_0: -8840869773734088916
+      BG_Dog12_0: -2821836102108491637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -8,9 +8,9 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Player")]
-    [SerializeField] private PlayerMovement player1;
-    [SerializeField] private PlayerMovement player2;
+    //[Header("Player")]
+    //[SerializeField] private PlayerMovement player1;
+    //[SerializeField] private PlayerMovement player2;
 
     [Header("Swap Settings")]
     [SerializeField] private SwapBox swapBox1;
@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
     {
         LevelTransition();
         SwapPlayer();
-        ResetPlayer();
+        CheckReset();
+        //ResetPlayer();
     }
 
     #region Scene Handling
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Both goals reached! Stage Win!");
             //Debug.Log("Current Scene Index: " + buildIndex);
 
-            Task.WaitAll(Task.Delay(500)); // Wait for 0.5 second before loading next scene
+            //Task.WaitAll(Task.Delay(500)); // Wait for 0.5 second before loading next scene  
             if (!IsGoNextLVL)
             {
                 SaveStageReached(currentLVL);
@@ -127,33 +128,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ResetPlayer()
+    private void CheckReset()
     {
-        if (player1 == null || player2 == null) return;
-
-        if (player1.isWaitToReset || player2.isWaitToReset)
+        if ((swapBox1.isReady || swapBox2.isReady) && (goal1.IsReached || goal2.IsReached))
         {
-            player1.isWaitToReset = true;
-            player2.isWaitToReset = true;
-        }
-
-        //if (player1.readyToReset)
-        //{
-        //    if (player2.readyToReset) return;
-        //    player1.ResetPlayer();
-        //    player2.ResetPlayer();
-        //}
-        //else if (player2.readyToReset)
-        //{
-        //    if (player1.readyToReset) return;
-        //    player1.ResetPlayer();
-        //    player2.ResetPlayer();
-        //}
-
-        if (player1.readyToReset || player2.readyToReset)
-        {
-            player1.ResetPlayer();
-            player2.ResetPlayer();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     private void Quit()
