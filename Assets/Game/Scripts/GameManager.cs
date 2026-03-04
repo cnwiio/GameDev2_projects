@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
         LevelTransition();
         SwapPlayer();
         CheckReset();
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            StartCoroutine(Playtransition());
+        }
         //ResetPlayer();
     }
 

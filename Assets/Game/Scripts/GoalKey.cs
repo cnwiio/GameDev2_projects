@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class GoalKey : MonoBehaviour
 {
-    [NonSerialized] public bool isCollected = false;
+    [NonSerialized] private bool isCollected = false;
+    public event Action OnCollected;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,6 +12,7 @@ public class GoalKey : MonoBehaviour
         {
             Debug.Log("Goal Key Collected!");
             isCollected = true;
+            OnCollected?.Invoke();
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
         }

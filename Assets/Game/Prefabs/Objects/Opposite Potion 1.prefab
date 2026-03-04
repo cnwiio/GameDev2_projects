@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7006154752384009837}
   - component: {fileID: 2659929192003131998}
   m_Layer: 0
-  m_Name: Opposite Potion
+  m_Name: Opposite Potion 1
   m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,10 +78,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1616434469
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7288788263513240260, guid: 02ec6d0b797186f48bf1af95cacd0506, type: 3}
+  m_Sprite: {fileID: -1732860877400623794, guid: ee55af61101bbbf4f96a4aa72d206e58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,7 +148,7 @@ Animator:
   m_GameObject: {fileID: 3263359454288888548}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5639e564e303ad8429a10c62a919070b, type: 2}
+  m_Controller: {fileID: 9100000, guid: e89afffec6716ef4d98448b12495f71e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
