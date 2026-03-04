@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 2fba0d070a95d1441a69d553762ac634
+guid: 2a652c57225350e4aa009907dec88682
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8462116672675641542
-    second: BG_Girl1_0
+      213: 7240123966752025679
+    second: BG_GirlSmall2_0
+  - first:
+      213: -9107886522681433376
+    second: BG_GirlSmall2_1
+  - first:
+      213: -4290403788362680396
+    second: BG_GirlSmall2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +46,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -126,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_Girl1_0
+      name: BG_GirlSmall2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 448
-        height: 160
+        width: 141
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c8fdb2974a7f6570800000000000000
-      internalID: 8462116672675641542
+      spriteID: f4ceb0053661a7460800000000000000
+      internalID: 7240123966752025679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_GirlSmall2_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2610996794a9180800000000000000
+      internalID: -9107886522681433376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_GirlSmall2_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 75
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7f6ab6c7c6574c0800000000000000
+      internalID: -4290403788362680396
       vertices: []
       indices: 
       edges: []
@@ -161,7 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BG_Girl1_0: 8462116672675641542
+      BG_GirlSmall2_0: 7240123966752025679
+      BG_GirlSmall2_1: -9107886522681433376
+      BG_GirlSmall2_2: -4290403788362680396
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,6 +1,8 @@
 using System;
 using TarodevController;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SwapBox : MonoBehaviour
 {
@@ -8,6 +10,21 @@ public class SwapBox : MonoBehaviour
     [NonSerialized] private bool isEntered = false;
     [NonSerialized] public GameObject player;
     [NonSerialized] public GameObject target;
+
+    [SerializeField] private TextMeshPro textMesh;
+
+    private void Update()
+    {
+        if (isEntered)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && player != null)
+            {
+                player.GetComponent<PlayerMovement>().ToggleEnble(false);
+                player.transform.localPosition = transform.position;
+                isReady = true;
+            }
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,16 +34,16 @@ public class SwapBox : MonoBehaviour
         {
             //Debug.Log(gameObject.name + "Player Entered Swap Box!"); 
             player = collision.gameObject;
-            collision.GetComponent<PlayerMovement>().ToggleEnble(false);
-            player.transform.localPosition = transform.position;
             isEntered = true;
-            isReady = true;
+            ToggleText(true);
             //Debug.Log(Equals(collision.gameObject.transform.localPosition, transform.position));
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        isEntered = false;
+        ToggleText(false);
         if (collision.gameObject == target) target = null;
     }
 
@@ -35,7 +52,6 @@ public class SwapBox : MonoBehaviour
         player.transform.localPosition = TargetPos;
         player.transform.GetComponent<PlayerMovement>().ToggleEnble(true);
         isReady = false;
-        isEntered = false;
         player = null;
     }
 
@@ -43,5 +59,15 @@ public class SwapBox : MonoBehaviour
     {
         if(target != null) return;
         target = gameObject;
+    }
+
+    private void ToggleText(bool isEnabled)
+    {
+        if (textMesh == null)
+        {
+            Debug.LogWarning(gameObject.name + " TextMeshPro component is not assigned in the inspector! Please assign it to display swap instructions.");
+            return;
+        }
+        textMesh.enabled = isEnabled;
     }
 }

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b823639e543694d890e5f8a77be1af, type: 3}
+  m_Name: PlayerStatsPrologue
+  m_EditorClassIdentifier: Assembly-CSharp::TarodevController.ScriptableStats
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  SnapInput: 1
+  VerticalDeadZoneThreshold: 0.1
+  HorizontalDeadZoneThreshold: 0.1
+  MaxSpeed: 3.5
+  Acceleration: 70
+  GroundDeceleration: 60
+  AirDeceleration: 30
+  GroundingForce: 0
+  GrounderDistance: 0.05
+  JumpPower: 24
+  MaxFallSpeed: 40
+  FallAcceleration: 80
+  JumpEndEarlyGravityModifier: 3
+  CoyoteTime: 0.15
+  JumpBuffer: 0.1
+  JumpApexThreshold: 3
+  ApexBonus: 5

@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     [Header("Swap Settings")]
     [SerializeField] private SwapBox swapBox1;
     [SerializeField] private SwapBox swapBox2;
-    private bool isSwapped = false;
 
     #region Goal
     [Header("Goal Settings")]
@@ -70,7 +69,7 @@ public class GameManager : MonoBehaviour
                 if (SceneName == "")
                 {
                     Debug.LogError("SceneName is empty! Cannot load scene.");
-                    Quit();
+                    //Quit();
                     return;
                 }
 
@@ -115,34 +114,42 @@ public class GameManager : MonoBehaviour
     private void SwapPlayer()
     {
         if (swapBox1 == null || swapBox2 == null) return;
-        if (swapBox1.isReady && swapBox2.isReady && !isSwapped)
+        if (swapBox1.isReady && swapBox2.isReady /*&& !isSwapped*/)
         {
             //Debug.Log("Swapping Players!");
-            isSwapped = true;
+            //isSwapped = true;
             swapBox1.SetTarget(swapBox2.player);
             swapBox2.SetTarget(swapBox1.player);
-            Vector3 tempPosition = swapBox1.player.transform.position;
-            swapBox1.SwapToPos(swapBox2.player.transform.position);
-            swapBox2.SwapToPos(tempPosition);
-            isSwapped = false; 
+            //Vector3 tempPosition = swapBox1.player.transform.position;
+            swapBox1.SwapToPos(swapBox2.transform.position);
+            swapBox2.SwapToPos(swapBox1.transform.position);
+            //isSwapped = false; 
         }
     }
 
     private void CheckReset()
     {
-        if ((swapBox1.isReady || swapBox2.isReady) && (goal1.IsReached || goal2.IsReached))
+        if (swapBox1 != null & swapBox2 != null)
+        {
+            if ((swapBox1.isReady || swapBox2.isReady) && (goal1.IsReached || goal2.IsReached))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            } 
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-    private void Quit()
-    {
+//    private void Quit()
+//    {
 
-#if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+//#if UNITY_EDITOR
+//        EditorApplication.isPlaying = false;
+//#else
+//        Application.Quit();
+//#endif
 
-    }
+//    }
 }

@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2fba0d070a95d1441a69d553762ac634
+guid: ee55af61101bbbf4f96a4aa72d206e58
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8462116672675641542
-    second: BG_Girl1_0
+      213: -1732860877400623794
+    second: RedFog-Sheet_0
+  - first:
+      213: 8834870276408775063
+    second: RedFog-Sheet_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,13 +43,13 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,23 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_Girl1_0
+      name: RedFog-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 448
-        height: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c8fdb2974a7f6570800000000000000
-      internalID: 8462116672675641542
+      spriteID: e453d5d8634a3f7e0800000000000000
+      internalID: -1732860877400623794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedFog-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791900e05b3cb9a70800000000000000
+      internalID: 8834870276408775063
       vertices: []
       indices: 
       edges: []
@@ -151,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 9f0381519cf8d2b429ac91dfe5edfb08
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +184,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      BG_Girl1_0: 8462116672675641542
+      RedFog-Sheet_0: -1732860877400623794
+      RedFog-Sheet_1: 8834870276408775063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
