@@ -120,12 +120,20 @@ namespace TarodevController
         //        if (ceilingHit) frameVelocity.y = Mathf.Min(0, frameVelocity.y);
         //    }
         //}
-
+        LayerMask cellingmask;
+        LayerMask groundmask;
         private void CheckCollisions()
         {
             Physics2D.queriesStartInColliders = false;
-            LayerMask cellingmask = LayerMask.GetMask("Ground", "Ground1", "Ground2");
-            LayerMask groundmask = LayerMask.GetMask("Ground", "Ground1", "Ground2","Platform");
+
+            if (_stats.PlayerLayer == LayerMask.GetMask("Player1"))
+            {
+                cellingmask = LayerMask.GetMask("Ground", "Ground1");
+                groundmask = LayerMask.GetMask("Ground", "Ground1", "Platform", "Platform1");
+            } else  {
+                cellingmask = LayerMask.GetMask("Ground", "Ground2");
+                groundmask = LayerMask.GetMask("Ground", "Ground2", "Platform", "Platform2");
+            }
 
 
             // Ground and Ceiling

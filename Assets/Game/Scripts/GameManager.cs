@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Threading.Tasks;
+using NUnit.Framework.Internal.Filters;
 using TarodevController;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,6 +32,8 @@ public class GameManager : MonoBehaviour
     [Header("Transition")]
     [SerializeField] private Animator fadeAnimator;
     [SerializeField] private float transitionTime;
+    [SerializeField] private CinemachineCamera cam1A, cam2A;
+    [SerializeField] private bool DebugTransition;
 
 
 
@@ -39,6 +44,24 @@ public class GameManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         currentLVL = (byte)currentScene.buildIndex;
         nextLVL = (byte)(currentScene.buildIndex + 1);
+        if (PlayerPrefs.HasKey("EnterStage"))
+        {
+            if (PlayerPrefs.GetInt("EnterStage") == 1) // true
+            {
+                PlayerPrefs.SetInt("EnterStage", 0);
+                StartCoroutine(PlayCam(0.05f));
+            }
+            else if (DebugTransition)
+            {
+                StartCoroutine(PlayCam(0.05f));
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("EnterStage", 1);
+            StartCoroutine(PlayCam(0.05f));
+        }
+        
     }
 
     // Update is called once per frame
@@ -64,6 +87,7 @@ public class GameManager : MonoBehaviour
         {
             db = true;
             Debug.Log("Both goals reached! Stage Win!");
+            PlayerPrefs.SetInt("EnterStage", 1);
             //Debug.Log("Current Scene Index: " + buildIndex);
 
             //Task.WaitAll(Task.Delay(500)); // Wait for 0.5 second before loading next scene  
@@ -147,11 +171,21 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+    private IEnumerator PlayCam(float time)
+    {
+        cam1A.Priority = cam2A.Priority = 2;
+        yield return new WaitForSeconds(time);
+        cam1A.Priority = 0;
+        cam2A.Priority = 0;
+        PlayerPrefs.SetInt("EnterStage", 0);
+    }
 //    private void Quit()
 //    {
 
 //#if UNITY_EDITOR
 //        EditorApplication.isPlaying = false;
+//        PlayerPrefs.SetInt("EnterStage", 1);
 //#else
 //        Application.Quit();
 //#endif

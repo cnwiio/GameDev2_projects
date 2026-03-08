@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1574637991701490364}
   - component: {fileID: 8779307828474199007}
   m_Layer: 0
-  m_Name: Swap Box
+  m_Name: Swap Box 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,8 +233,8 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -912561665
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3287347818775206948
