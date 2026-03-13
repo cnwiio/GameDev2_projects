@@ -1,0 +1,1060 @@
+fileFormatVersion: 2
+guid: 1492a80042d983e4691db20eeadadf5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8359944671737256047
+    second: PlatformGirlOutline_0
+  - first:
+      213: 2319706504352133361
+    second: PlatformGirlOutline_1
+  - first:
+      213: 5063202039380010821
+    second: PlatformGirlOutline_2
+  - first:
+      213: -7643030430059309966
+    second: PlatformGirlOutline_3
+  - first:
+      213: -9178298223344374420
+    second: PlatformGirlOutline_4
+  - first:
+      213: 9181494237103206197
+    second: PlatformGirlOutline_5
+  - first:
+      213: -3333361625141526054
+    second: PlatformGirlOutline_6
+  - first:
+      213: 72021132716566773
+    second: PlatformGirlOutline_7
+  - first:
+      213: 6631044334744937304
+    second: PlatformGirlOutline_8
+  - first:
+      213: -7686886446918650312
+    second: PlatformGirlOutline_9
+  - first:
+      213: -4986288995451673910
+    second: PlatformGirlOutline_10
+  - first:
+      213: 5832073447337840308
+    second: PlatformGirlOutline_11
+  - first:
+      213: 1866067235092225300
+    second: PlatformGirlOutline_12
+  - first:
+      213: -7684698403598668724
+    second: PlatformGirlOutline_13
+  - first:
+      213: 4670562310199816950
+    second: PlatformGirlOutline_14
+  - first:
+      213: 2583834948390459955
+    second: PlatformGirlOutline_15
+  - first:
+      213: 8322490073311262422
+    second: PlatformGirlOutline_16
+  - first:
+      213: -5690093813793638530
+    second: PlatformGirlOutline_17
+  - first:
+      213: -2804821462742943886
+    second: PlatformGirlOutline_18
+  - first:
+      213: -3432932560693888819
+    second: PlatformGirlOutline_19
+  - first:
+      213: 5390094397206761090
+    second: PlatformGirlOutline_20
+  - first:
+      213: -2588831306775909564
+    second: PlatformGirlOutline_21
+  - first:
+      213: -5597985705027676206
+    second: PlatformGirlOutline_22
+  - first:
+      213: -5187108200232160418
+    second: PlatformGirlOutline_23
+  - first:
+      213: 1272460558946632466
+    second: PlatformGirlOutline_24
+  - first:
+      213: -8479196803102260513
+    second: PlatformGirlOutline_25
+  - first:
+      213: 8852399155184489210
+    second: PlatformGirlOutline_26
+  - first:
+      213: -2984502807309323724
+    second: PlatformGirlOutline_27
+  - first:
+      213: -3538901424209826731
+    second: PlatformGirlOutline_28
+  - first:
+      213: -4219659944614114626
+    second: PlatformGirlOutline_29
+  - first:
+      213: -2457839458808909099
+    second: PlatformGirlOutline_30
+  - first:
+      213: -4762514991495851392
+    second: PlatformGirlOutline_31
+  - first:
+      213: 242771415896699873
+    second: PlatformGirlOutline_32
+  - first:
+      213: -3527686647777403307
+    second: PlatformGirlOutline_33
+  - first:
+      213: 7705374656967060395
+    second: PlatformGirlOutline_34
+  - first:
+      213: -7395821247712460951
+    second: PlatformGirlOutline_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlatformGirlOutline_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1976e2b2d928bfb80800000000000000
+      internalID: -8359944671737256047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f0721f76c0413020800000000000000
+      internalID: 2319706504352133361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5476747cd6b144640800000000000000
+      internalID: 5063202039380010821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27450d081508ee590800000000000000
+      internalID: -7643030430059309966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6da5f2056220a080800000000000000
+      internalID: -9178298223344374420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f25ddec583b6f70800000000000000
+      internalID: 9181494237103206197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_6
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad1458943458db1d0800000000000000
+      internalID: -3333361625141526054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f864efa6dedff000800000000000000
+      internalID: 72021132716566773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_8
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853a65e80b3360c50800000000000000
+      internalID: 6631044334744937304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_9
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83636aed081b25590800000000000000
+      internalID: -7686886446918650312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_10
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac2e9aeb3942dcab0800000000000000
+      internalID: -4986288995451673910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be4f8496efafe050800000000000000
+      internalID: 5832073447337840308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ddaa2734a95e910800000000000000
+      internalID: 1866067235092225300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c6d7764877a5590800000000000000
+      internalID: -7684698403598668724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_14
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f2b9c8ecab21d040800000000000000
+      internalID: 4670562310199816950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_15
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a9d012230abd320800000000000000
+      internalID: 2583834948390459955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_16
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d6be6290ac6f7370800000000000000
+      internalID: 8322490073311262422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_17
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77be22e2d9b801b0800000000000000
+      internalID: -5690093813793638530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_18
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 277b0de7db54319d0800000000000000
+      internalID: -2804821462742943886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc8f7f54606cb50d0800000000000000
+      internalID: -3432932560693888819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_20
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e055bdb467dca40800000000000000
+      internalID: 5390094397206761090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_21
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b263884af921cd0800000000000000
+      internalID: -2588831306775909564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_22
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d75c1229a5ff42b0800000000000000
+      internalID: -5597985705027676206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5375a90390b308b0800000000000000
+      internalID: -5187108200232160418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_24
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21385b6f220b8a110800000000000000
+      internalID: 1272460558946632466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_25
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2467aae67d35a80800000000000000
+      internalID: -8479196803102260513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_26
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af25dbe212a0ada70800000000000000
+      internalID: 8852399155184489210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_27
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432fb23628ae496d0800000000000000
+      internalID: -2984502807309323724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_28
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c69d297eb43eec0800000000000000
+      internalID: -3538901424209826731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_29
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebac45813a1c075c0800000000000000
+      internalID: -4219659944614114626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_30
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2b1cec80004edd0800000000000000
+      internalID: -2457839458808909099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_31
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 082da6e19d528edb0800000000000000
+      internalID: -4762514991495851392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_32
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e33426015f7e5300800000000000000
+      internalID: 242771415896699873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_34
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baba1d9fc6dfeea60800000000000000
+      internalID: 7705374656967060395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformGirlOutline_35
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fffcb82c3cc5990800000000000000
+      internalID: -7395821247712460951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 79670f916c376664298ee9deaeb5a8bc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":13.0,"y":7.0},"gridSpritePadding":{"x":1.0,"y":1.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      PlatformGirlOutline_0: -8359944671737256047
+      PlatformGirlOutline_1: 2319706504352133361
+      PlatformGirlOutline_10: -4986288995451673910
+      PlatformGirlOutline_11: 5832073447337840308
+      PlatformGirlOutline_12: 1866067235092225300
+      PlatformGirlOutline_13: -7684698403598668724
+      PlatformGirlOutline_14: 4670562310199816950
+      PlatformGirlOutline_15: 2583834948390459955
+      PlatformGirlOutline_16: 8322490073311262422
+      PlatformGirlOutline_17: -5690093813793638530
+      PlatformGirlOutline_18: -2804821462742943886
+      PlatformGirlOutline_19: -3432932560693888819
+      PlatformGirlOutline_2: 5063202039380010821
+      PlatformGirlOutline_20: 5390094397206761090
+      PlatformGirlOutline_21: -2588831306775909564
+      PlatformGirlOutline_22: -5597985705027676206
+      PlatformGirlOutline_23: -5187108200232160418
+      PlatformGirlOutline_24: 1272460558946632466
+      PlatformGirlOutline_25: -8479196803102260513
+      PlatformGirlOutline_26: 8852399155184489210
+      PlatformGirlOutline_27: -2984502807309323724
+      PlatformGirlOutline_28: -3538901424209826731
+      PlatformGirlOutline_29: -4219659944614114626
+      PlatformGirlOutline_3: -7643030430059309966
+      PlatformGirlOutline_30: -2457839458808909099
+      PlatformGirlOutline_31: -4762514991495851392
+      PlatformGirlOutline_32: 242771415896699873
+      PlatformGirlOutline_33: -3527686647777403307
+      PlatformGirlOutline_34: 7705374656967060395
+      PlatformGirlOutline_35: -7395821247712460951
+      PlatformGirlOutline_36: 1910826536
+      PlatformGirlOutline_4: -9178298223344374420
+      PlatformGirlOutline_5: 9181494237103206197
+      PlatformGirlOutline_6: -3333361625141526054
+      PlatformGirlOutline_7: 72021132716566773
+      PlatformGirlOutline_8: 6631044334744937304
+      PlatformGirlOutline_9: -7686886446918650312
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
