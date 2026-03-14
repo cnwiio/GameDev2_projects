@@ -443,6 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4743014976542757465}
   - component: {fileID: 7913927697717159719}
+  - component: {fileID: 2196255472944861938}
   m_Layer: 14
   m_Name: Blur Volume
   m_TagString: Untagged
@@ -482,6 +483,36 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 1f5fc673747a95342acfa46deb97092f, type: 2}
+--- !u!114 &2196255472944861938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6790686364234582339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3abd8fa23a41844816d72f7a6ea2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManualResolutionDoF
+  fallbackAperture: 0
+  fallbackFocusDistance: 2
+  profiles:
+  - targetScreenHeight: 1280
+    aperture: 0
+    focusDistance: 2.1
+  - targetScreenHeight: 1366
+    aperture: 0
+    focusDistance: 2.1
+  - targetScreenHeight: 1600
+    aperture: 0
+    focusDistance: 2.05
+  - targetScreenHeight: 1920
+    aperture: 0
+    focusDistance: 2
+  - targetScreenHeight: 2560
+    aperture: 0
+    focusDistance: 1.95
 --- !u!1 &7518112054778442508
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,13 +891,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9027081574909199036}
     m_Modifications:
+    - target: {fileID: 3932346342689001033, guid: f7d81c7273307824d8e09a2ee1353031, type: 3}
+      propertyPath: orthographic size
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4430275025596901388, guid: f7d81c7273307824d8e09a2ee1353031, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.92
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4430275025596901388, guid: f7d81c7273307824d8e09a2ee1353031, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.52
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4430275025596901388, guid: f7d81c7273307824d8e09a2ee1353031, type: 3}
       propertyPath: m_LocalPosition.z
@@ -993,6 +1028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2702286841686381103, guid: e567f6abf0431b04ab75214e0a3ce87c, type: 3}
+      propertyPath: orthographic size
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2779585443072893472, guid: e567f6abf0431b04ab75214e0a3ce87c, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1003,7 +1042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2784907145480184033, guid: e567f6abf0431b04ab75214e0a3ce87c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.52
+      value: 19.5
       objectReference: {fileID: 0}
     - target: {fileID: 2784907145480184033, guid: e567f6abf0431b04ab75214e0a3ce87c, type: 3}
       propertyPath: m_LocalPosition.z

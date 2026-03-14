@@ -3,17 +3,17 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.EventSystems; // <-- สำคัญมาก! ต้องมีตัวนี้สำหรับทำ Hover
 
 public class PixelStageSelectManager : MonoBehaviour
 {
     [Header("UI Object References")]
     public RectTransform highlightCorners;
     public RectTransform buttonGridRoot;
-    //public TextMeshProUGUI titleText;
 
     [Header("Game Data")]
     [Tooltip("Set this to your maximum number of levels (e.g., 12)")]
-    public int totalLevels = 12; // <-- ADDED: Easily control max levels from Inspector
+    public int totalLevels = 12;
     public string levelScenePrefix = "Level_";
 
     [Header("Input Keys")]
@@ -56,36 +56,44 @@ public class PixelStageSelectManager : MonoBehaviour
             {
                 levelButtons[i] = buttonGridRoot.GetChild(i).GetComponent<Button>();
                 buttonTexts[i] = levelButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+
+                // --- เพิ่มระบบ MOUSE (CLICK & HOVER) ---
+                int buttonIndex = i; // ต้องเก็บค่า i ไว้ในตัวแปร local เพื่อให้ Event ดึงไปใช้ได้ถูกต้อง
+
+                // 1. ระบบ Click
+                levelButtons[i].onClick.AddListener(() => OnButtonClicked(buttonIndex));
+
+                // 2. ระบบ Hover (Pointer Enter)
+                // เช็คก่อนว่ามี EventTrigger คอมโพเนนต์อยู่ไหม ถ้าไม่มีให้ใส่เพิ่มเข้าไป
+                EventTrigger trigger = levelButtons[i].gameObject.GetComponent<EventTrigger>();
+                if (trigger == null) trigger = levelButtons[i].gameObject.AddComponent<EventTrigger>();
+
+                // สร้าง Event เมื่อเมาส์ลากเข้ามาในปุ่ม
+                EventTrigger.Entry entry = new EventTrigger.Entry();
+                entry.eventID = EventTriggerType.PointerEnter;
+                entry.callback.AddListener((data) => { OnButtonHovered(buttonIndex); });
+                trigger.triggers.Add(entry);
+                // ------------------------------------
             }
         }
 
-        // --- NEW PLAYERPREFS LOGIC HERE ---
-
-        // Grab the highest stage reached. If "CurrentStage" isn't saved yet, it defaults to 1.
         int highestUnlockedStage = PlayerPrefs.GetInt("CurrentStage", 1);
 
         allLevelsData = new List<LevelData>();
         for (int i = 1; i <= totalLevels; i++)
         {
-            // The level is locked if its number is greater than the player's highest unlocked stage
             bool isLevelLocked = i > highestUnlockedStage;
-
             allLevelsData.Add(new LevelData { number = i, isLocked = isLevelLocked });
         }
-
-        // ----------------------------------
 
         totalPages = Mathf.CeilToInt((float)totalLevels / levelsPerPage);
     }
 
     private void Start()
     {
-
-        // BUG FIX 1: Ensure we start exactly on Page 0, Button 0
         currentPageIndex = 0;
         currentSelectedIndex = 0;
 
-        // Force Canvas to update so the layout group arranges the buttons before we move the cursor
         Canvas.ForceUpdateCanvases();
 
         UpdateLevelNumbersOnButtons();
@@ -99,6 +107,31 @@ public class PixelStageSelectManager : MonoBehaviour
         HandleSelection();
     }
 
+    // --- MOUSE EVENT METHODS ---
+
+    private void OnButtonHovered(int index)
+    {
+        // เมื่อเมาส์ลากเข้ามาทับปุ่ม ให้เช็คก่อนว่าปุ่มนั้นมีด่านอยู่จริงไหม
+        if (IsValidButtonIndex(index))
+        {
+            currentSelectedIndex = index;
+            UpdateUIFeedback(); // ย้ายไฮไลท์ไปที่ปุ่มนั้น
+        }
+    }
+
+    private void OnButtonClicked(int index)
+    {
+        // เมื่อคลิกปุ่ม ให้ย้ายไฮไลท์ไปที่นั่น (เผื่อไว้) แล้วกดยืนยันเข้าด่านเลย
+        if (IsValidButtonIndex(index))
+        {
+            currentSelectedIndex = index;
+            UpdateUIFeedback();
+            ConfirmSelection();
+        }
+    }
+
+    // ---------------------------
+
     private void HandleGridNavigation()
     {
         int col = currentSelectedIndex % gridCols;
@@ -107,7 +140,6 @@ public class PixelStageSelectManager : MonoBehaviour
         int proposedRow = row;
         int proposedCol = col;
 
-        // Up/Down logic remains the same (wraps vertically within the same column)
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             if (proposedRow > 0) proposedRow--;
@@ -118,19 +150,15 @@ public class PixelStageSelectManager : MonoBehaviour
             if (proposedRow < gridRows - 1) proposedRow++;
             else proposedRow = 0;
         }
-        // Left/Right now handles wrapping to previous/next rows
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             if (proposedCol > 0)
             {
-                proposedCol--; // Move left normally
+                proposedCol--;
             }
             else
             {
-                // Wrap to the last column
                 proposedCol = gridCols - 1;
-
-                // Jump up one row (wrap to bottom row if currently at the top row)
                 if (proposedRow > 0) proposedRow--;
                 else proposedRow = gridRows - 1;
             }
@@ -139,14 +167,11 @@ public class PixelStageSelectManager : MonoBehaviour
         {
             if (proposedCol < gridCols - 1)
             {
-                proposedCol++; // Move right normally
+                proposedCol++;
             }
             else
             {
-                // Wrap to the first column
                 proposedCol = 0;
-
-                // Jump down one row (wrap to top row if currently at the bottom row)
                 if (proposedRow < gridRows - 1) proposedRow++;
                 else proposedRow = 0;
             }
@@ -154,7 +179,6 @@ public class PixelStageSelectManager : MonoBehaviour
 
         int newSelectedIndex = (proposedRow * gridCols) + proposedCol;
 
-        // Check if the new index actually contains a level before moving
         if (newSelectedIndex != currentSelectedIndex && IsValidButtonIndex(newSelectedIndex))
         {
             currentSelectedIndex = newSelectedIndex;
@@ -162,7 +186,6 @@ public class PixelStageSelectManager : MonoBehaviour
         }
     }
 
-    // Helper method to verify a slot has an active level
     private bool IsValidButtonIndex(int indexOnPage)
     {
         int globalIndex = (currentPageIndex * levelsPerPage) + indexOnPage;
@@ -184,7 +207,7 @@ public class PixelStageSelectManager : MonoBehaviour
         if (newPage != currentPageIndex)
         {
             currentPageIndex = newPage;
-            currentSelectedIndex = 0; // Always reset to the first button on page flip
+            currentSelectedIndex = 0;
             UpdateLevelNumbersOnButtons();
             UpdateUIFeedback();
         }
@@ -202,13 +225,14 @@ public class PixelStageSelectManager : MonoBehaviour
 
         if (!selectedLevel.isLocked)
         {
-            Debug.Log($"Loading level: {selectedLevel.number}");
+            //Debug.Log($"Loading level: {selectedLevel.number}");
+            PlayerPrefs.SetInt("EnterStage", 1);
             SceneManager.LoadScene(levelScenePrefix + selectedLevel.number);
         }
-        else
-        {
-            Debug.Log("Cannot load level: Level is locked!");
-        }
+        //else
+        //{
+        //    //Debug.Log("Cannot load level: Level is locked!");
+        //}
     }
 
     private void UpdateLevelNumbersOnButtons()
@@ -225,7 +249,6 @@ public class PixelStageSelectManager : MonoBehaviour
             }
             else
             {
-                // Deactivate buttons that exceed total levels (e.g., slot 13)
                 levelButtons[i].gameObject.SetActive(false);
             }
         }
@@ -233,8 +256,6 @@ public class PixelStageSelectManager : MonoBehaviour
 
     private void UpdateUIFeedback()
     {
-        // BUG FIX 1 (Part 2): Use transform.position (world space) instead of anchoredPosition
-        // This prevents the cursor from misaligning if the layout group shifts.
         Button currentButton = levelButtons[currentSelectedIndex];
         highlightCorners.position = currentButton.transform.position;
 

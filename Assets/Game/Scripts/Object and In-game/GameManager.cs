@@ -7,8 +7,10 @@ using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,6 +40,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CinemachineCamera cam1A, cam2A;
     [SerializeField] private bool DebugTransition;
 
+    [Header("UI")]
+    [SerializeField] private GameObject PauseButton;
+    [SerializeField] private GameObject PausePanel;
 
 
 
@@ -71,6 +76,7 @@ public class GameManager : MonoBehaviour
         LevelTransition();
         SwapPlayer();
         CheckReset();
+        CheckInputPause();
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -140,6 +146,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("CurrentStage", stage);
         }
+        PlayerPrefs.Save();
     }
     #endregion
     private void SwapPlayer()
@@ -201,6 +208,15 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         textUI.text = SceneManager.GetActiveScene().name;
         animatorUI.SetTrigger("Start");
+    }
+
+    private void CheckInputPause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseButton.SetActive(!PauseButton.activeSelf);
+            PausePanel.SetActive(!PausePanel.activeSelf);
+        }
     }
 //    private void Quit()
 //    {

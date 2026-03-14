@@ -18,9 +18,17 @@ public class GameSettingsManager : MonoBehaviour
     [Header("Systems")]
     public AudioSettings audioSettings; // ลาก AudioSettings (หรือ SoundManager เดิม) มาใส่ช่องนี้
 
-    // ตัวแปรเก็บข้อมูล
-    private Resolution[] resolutions;
-    private int currentResIndex = 0;
+    [Header("Custom Settings")]
+    [Tooltip("ใส่ขนาดหน้าจอที่ต้องการให้ผู้เล่นเลือกได้ (เช่น X=1920, Y=1080)")]
+    // สร้าง Array แบบกำหนดค่าเองได้ใน Inspector พร้อมค่าเริ่มต้น
+    public Vector2Int[] customResolutions = new Vector2Int[]
+    {
+        new Vector2Int(1280, 720),   // HD
+        new Vector2Int(1600, 900),   // HD+
+        new Vector2Int(1920, 1080),  // Full HD
+        new Vector2Int(2560, 1440)   // 2K
+    };
+    private int currentResIndex = 2; // ให้เริ่มต้นที่ Full HD (Index ที่ 2)
 
     private string[] vsyncOptions = { "Off", "On" };
     private int currentVsyncIndex = 0;
@@ -36,14 +44,14 @@ public class GameSettingsManager : MonoBehaviour
 
     private void Start()
     {
-        // 1. ดึงข้อมูล Resolution ที่หน้าจอผู้เล่นรองรับ
-        resolutions = Screen.resolutions;
+        if (audioSettings == null) audioSettings = FindAnyObjectByType<AudioSettings>();
 
-        // 2. โหลดค่า Setting ที่เคยเซฟไว้ (ถ้ามี)
+        FilterSupportedResolutions();
         LoadSettings();
-
-        // 3. อัปเดตตัวหนังสือบนหน้าจอ
         UpdateUITexts();
+
+        // เพิ่มบรรทัดนี้ เพื่อบังคับให้เกมปรับระดับเสียงตาม UI ทันทีตอนเริ่มเกม
+        ApplyVolumeRealtime();
     }
 
     // ==========================================
@@ -51,7 +59,7 @@ public class GameSettingsManager : MonoBehaviour
     // ==========================================
     private void UpdateUITexts()
     {
-        resolutionText.text = resolutions[currentResIndex].width + " x " + resolutions[currentResIndex].height;
+        resolutionText.text = customResolutions[currentResIndex].x + " x " + customResolutions[currentResIndex].y;
         vsyncText.text = vsyncOptions[currentVsyncIndex];
         fpsText.text = fpsOptions[currentFpsIndex] == -1 ? "Unlimited" : fpsOptions[currentFpsIndex].ToString();
         // อัปเดตตัวเลข % ของเสียงทั้ง 4 หมวด
@@ -65,8 +73,8 @@ public class GameSettingsManager : MonoBehaviour
     // ==========================================
     // ฟังก์ชันปรับค่า Resolution
     // ==========================================
-    public void NextResolution() { currentResIndex = (currentResIndex + 1) % resolutions.Length; UpdateUITexts(); }
-    public void PrevResolution() { currentResIndex = (currentResIndex - 1 + resolutions.Length) % resolutions.Length; UpdateUITexts(); }
+    public void NextResolution() { currentResIndex = (currentResIndex + 1) % customResolutions.Length; UpdateUITexts(); }
+    public void PrevResolution() { currentResIndex = (currentResIndex - 1 + customResolutions.Length) % customResolutions.Length; UpdateUITexts(); }
 
     // ==========================================
     // ฟังก์ชันปรับค่า VSync
@@ -116,24 +124,19 @@ public class GameSettingsManager : MonoBehaviour
     // ==========================================
     public void ApplyChanges()
     {
-        // ตั้งค่า Resolution
-        Resolution res = resolutions[currentResIndex];
-        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
-
-        // ตั้งค่า VSync
+        Vector2Int res = customResolutions[currentResIndex];
+        Screen.SetResolution(res.x, res.y, Screen.fullScreen);
         QualitySettings.vSyncCount = currentVsyncIndex;
-
-        // ตั้งค่า FPS
         Application.targetFrameRate = fpsOptions[currentFpsIndex];
 
-        // เซฟค่าทั้งหมด
+        // เปลี่ยนชื่อ Key เป็น ...LevelUI เพื่อไม่ให้ชนกับ AudioSettings
         PlayerPrefs.SetInt("ResIndex", currentResIndex);
         PlayerPrefs.SetInt("VsyncIndex", currentVsyncIndex);
         PlayerPrefs.SetInt("FpsIndex", currentFpsIndex);
-        PlayerPrefs.SetInt("MasterLevel", currentMasterLevel);
-        PlayerPrefs.SetInt("SfxLevel", currentSfxLevel);
-        PlayerPrefs.SetInt("MusicLevel", currentMusicLevel);
-        PlayerPrefs.SetInt("AmbientLevel", currentAmbientLevel);
+        PlayerPrefs.SetInt("MasterLevelUI", currentMasterLevel);
+        PlayerPrefs.SetInt("SFXLevelUI", currentSfxLevel);
+        PlayerPrefs.SetInt("MusicLevelUI", currentMusicLevel);
+        PlayerPrefs.SetInt("AmbientLevelUI", currentAmbientLevel);
         PlayerPrefs.Save();
 
         //Debug.Log("Settings Applied and Saved!");
@@ -141,12 +144,42 @@ public class GameSettingsManager : MonoBehaviour
 
     private void LoadSettings()
     {
-        currentResIndex = PlayerPrefs.GetInt("ResIndex", resolutions.Length - 1);
+        int savedResIndex = PlayerPrefs.GetInt("ResIndex", 2);
+        currentResIndex = Mathf.Clamp(savedResIndex, 0, customResolutions.Length - 1);
         currentVsyncIndex = PlayerPrefs.GetInt("VsyncIndex", 0);
         currentFpsIndex = PlayerPrefs.GetInt("FpsIndex", 1);
-        currentMasterLevel = PlayerPrefs.GetInt("MasterLevel", 10);
-        currentSfxLevel = PlayerPrefs.GetInt("SfxLevel", 10);
-        currentMusicLevel = PlayerPrefs.GetInt("MusicLevel", 10);     // โหลดค่า
-        currentAmbientLevel = PlayerPrefs.GetInt("AmbientLevel", 10); // โหลดค่า
+
+        // โหลดข้อมูลโดยใช้ชื่อ Key ใหม่
+        currentMasterLevel = PlayerPrefs.GetInt("MasterLevelUI", 10);
+        currentSfxLevel = PlayerPrefs.GetInt("SFXLevelUI", 10);
+        currentMusicLevel = PlayerPrefs.GetInt("MusicLevelUI", 10);
+        currentAmbientLevel = PlayerPrefs.GetInt("AmbientLevelUI", 10);
+    }
+
+    private void FilterSupportedResolutions()
+    {
+        // หาค่า Resolution สูงสุดที่หน้าจอของผู้เล่นรองรับได้ (มักจะอยู่ตัวสุดท้ายของ Array)
+        Resolution maxMonitorRes = Screen.resolutions[Screen.resolutions.Length - 1];
+
+        List<Vector2Int> validResolutions = new List<Vector2Int>();
+
+        // วนลูปเช็ก customResolutions ที่เราตั้งค่าไว้ใน Inspector
+        foreach (Vector2Int res in customResolutions)
+        {
+            // ถ้าความกว้างและความสูง น้อยกว่าหรือเท่ากับ จอของผู้เล่น ให้เก็บไว้
+            if (res.x <= maxMonitorRes.width && res.y <= maxMonitorRes.height)
+            {
+                validResolutions.Add(res);
+            }
+        }
+
+        // เผื่อกรณีฉุกเฉิน: ถ้าไม่มีจอไหนผ่านเงื่อนไขเลย ให้ยึดขนาดจอสูงสุดของผู้เล่นไปเลย
+        if (validResolutions.Count == 0)
+        {
+            validResolutions.Add(new Vector2Int(maxMonitorRes.width, maxMonitorRes.height));
+        }
+
+        // นำค่าที่ผ่านการคัดกรองแล้ว ไปทับ Array ตัวเดิม
+        customResolutions = validResolutions.ToArray();
     }
 }
