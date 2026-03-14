@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b473287fddc90b42b12aa6b96025e32
+guid: 297d2b9bf63211c48a0c2589a5e72eaf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 866305849356127343
-    second: GirlDoor_0
+      213: 3752750861601639281
+    second: Stage_BG_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GirlDoor_0
+      name: Stage_BG_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 18
-        height: 24
+        width: 480
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6c07b1849cb50c00800000000000000
-      internalID: 866305849356127343
+      spriteID: 17b8e449603741430800000000000000
+      internalID: 3752750861601639281
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GirlDoor_0: 866305849356127343
+      Stage_BG_0: 3752750861601639281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

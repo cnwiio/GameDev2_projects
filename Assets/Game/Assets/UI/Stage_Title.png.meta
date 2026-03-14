@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 6b473287fddc90b42b12aa6b96025e32
+guid: 72357a5e8791edb4fb13609e952a1429
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 866305849356127343
-    second: GirlDoor_0
+      213: 4578045396631721259
+    second: Stage_Title_0
+  - first:
+      213: -2439323251340186466
+    second: Stage_Title_1
+  - first:
+      213: -6447988898418323132
+    second: Stage_Title_2
+  - first:
+      213: -5234881684037949857
+    second: Stage_Title_3
+  - first:
+      213: -6368328890657613830
+    second: Stage_Title_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +84,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -126,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GirlDoor_0
+      name: Stage_Title_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 18
-        height: 24
+        x: 0
+        y: 9
+        width: 27
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6c07b1849cb50c00800000000000000
-      internalID: 866305849356127343
+      spriteID: b2598df580c788f30800000000000000
+      internalID: 4578045396631721259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage_Title_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 9
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c648f4d68c52ed0800000000000000
+      internalID: -2439323251340186466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage_Title_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 10
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4411d1282442486a0800000000000000
+      internalID: -6447988898418323132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage_Title_3
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5628bd08d6f957b0800000000000000
+      internalID: -5234881684037949857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage_Title_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 10
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af7de736d962f97a0800000000000000
+      internalID: -6368328890657613830
       vertices: []
       indices: 
       edges: []
@@ -161,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GirlDoor_0: 866305849356127343
+      Stage_Title_0: 4578045396631721259
+      Stage_Title_1: -2439323251340186466
+      Stage_Title_2: -6447988898418323132
+      Stage_Title_3: -5234881684037949857
+      Stage_Title_4: -6368328890657613830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

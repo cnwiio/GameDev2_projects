@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b473287fddc90b42b12aa6b96025e32
+guid: ca24052b401945c4986ba034c04019fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 866305849356127343
-    second: GirlDoor_0
+      213: -2754890528716913681
+    second: DogDoor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GirlDoor_0
+      name: DogDoor_0
       rect:
         serializedVersion: 2
         x: 1
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6c07b1849cb50c00800000000000000
-      internalID: 866305849356127343
+      spriteID: fe38db009a9a4c9d0800000000000000
+      internalID: -2754890528716913681
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GirlDoor_0: 866305849356127343
+      DogDoor_0: -2754890528716913681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

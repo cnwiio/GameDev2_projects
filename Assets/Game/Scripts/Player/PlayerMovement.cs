@@ -279,7 +279,7 @@ namespace TarodevController
         {
             if (collision.CompareTag("Spike"))
             {
-                Debug.Log(name + " hit a spike!");
+                //Debug.Log(name + " hit a spike!");
                 if (GodMode) return;
                 if (animator != null) animator.SetTrigger("Death");
                 if (_rb.simulated) _rb.simulated = false;
@@ -288,7 +288,7 @@ namespace TarodevController
 
             if (collision.CompareTag("Potion"))
             {
-                Debug.Log(name + " hit a potion!");
+                //Debug.Log(name + " hit a potion!");
                 oppositeValue *= -1;
                 IsFacingLeft = !IsFacingLeft;
                 Destroy(collision.gameObject);
@@ -325,7 +325,7 @@ namespace TarodevController
         {
             yield return new WaitForSeconds(waitTime);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Debug.Log("Restarting Scene...");
+            //Debug.Log("Restarting Scene...");
         }
     }
 }

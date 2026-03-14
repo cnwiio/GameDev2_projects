@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 6b473287fddc90b42b12aa6b96025e32
+guid: fd43407d6907ad542a9b3a7bb644ab9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 866305849356127343
-    second: GirlDoor_0
+      213: 779406974582892651
+    second: Stage_E_0
+  - first:
+      213: -7339313533414928492
+    second: Stage_E_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +75,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GirlDoor_0
+      name: Stage_E_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 18
-        height: 24
+        width: 23
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6c07b1849cb50c00800000000000000
-      internalID: 866305849356127343
+      spriteID: b68a97f838201da00800000000000000
+      internalID: 779406974582892651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stage_E_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f06990a35852a90800000000000000
+      internalID: -7339313533414928492
       vertices: []
       indices: 
       edges: []
@@ -161,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GirlDoor_0: 866305849356127343
+      Stage_E_0: 779406974582892651
+      Stage_E_1: -7339313533414928492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

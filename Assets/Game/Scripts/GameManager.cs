@@ -2,6 +2,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using NUnit.Framework.Internal.Filters;
 using TarodevController;
+using TMPro;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
     #endregion
     [Header("Transition")]
     [SerializeField] private Animator fadeAnimator;
+    [SerializeField] private TextMeshProUGUI textUI;
+    [SerializeField] private Animator animatorUI;
     [SerializeField] private float transitionTime;
     [SerializeField] private CinemachineCamera cam1A, cam2A;
     [SerializeField] private bool DebugTransition;
@@ -48,18 +51,16 @@ public class GameManager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("EnterStage") == 1) // true
             {
-                PlayerPrefs.SetInt("EnterStage", 0);
-                StartCoroutine(PlayCam(0.05f));
+                EnterLevel();
             }
             else if (DebugTransition)
             {
-                StartCoroutine(PlayCam(0.05f));
+                EnterLevel();
             }
         }
         else
         {
-            PlayerPrefs.SetInt("EnterStage", 1);
-            StartCoroutine(PlayCam(0.05f));
+            EnterLevel();
         }
         
     }
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour
         if (goal1.IsReached && goal2.IsReached)
         {
             db = true;
-            Debug.Log("Both goals reached! Stage Win!");
+            //Debug.Log("Both goals reached! Stage Win!");
             PlayerPrefs.SetInt("EnterStage", 1);
             //Debug.Log("Current Scene Index: " + buildIndex);
 
@@ -97,7 +98,7 @@ public class GameManager : MonoBehaviour
 
                 if (SceneName == "")
                 {
-                    Debug.LogError("SceneName is empty! Cannot load scene.");
+                    //Debug.LogError("SceneName is empty! Cannot load scene.");
                     //Quit();
                     return;
                 }
@@ -178,7 +179,21 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         cam1A.Priority = 0;
         cam2A.Priority = 0;
+    }
+
+    private void EnterLevel()
+    {
         PlayerPrefs.SetInt("EnterStage", 0);
+        StartCoroutine(StartTextAfterDelay(2f));
+        StartCoroutine(PlayCam(0.05f));
+    }
+
+
+    private IEnumerator StartTextAfterDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+        textUI.text = SceneManager.GetActiveScene().name;
+        animatorUI.SetTrigger("Start");
     }
 //    private void Quit()
 //    {

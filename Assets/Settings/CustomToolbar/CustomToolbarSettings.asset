@@ -71,16 +71,6 @@ MonoBehaviour:
         CustomToolbar, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       isEnabled: 1
     isEnabled: 1
-  - groupName: Toolbox
-    side: 1
-    elements:
-    - name: OpalStudio.CustomToolbar.Editor.ToolbarElements.ToolbarToolbox, CustomToolbar,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      isEnabled: 1
-    - name: OpalStudio.CustomToolbar.Editor.ToolbarElements.Favorites.ToolbarFavorites,
-        CustomToolbar, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      isEnabled: 1
-    isEnabled: 1
   toolboxShortcuts:
   - displayName: New Shortcut
     subMenuPath: 

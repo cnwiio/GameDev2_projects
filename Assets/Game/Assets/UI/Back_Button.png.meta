@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b473287fddc90b42b12aa6b96025e32
+guid: 78a48a17b600e1040a5f287d13564ab1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 866305849356127343
-    second: GirlDoor_0
+      213: -2612257301339723111
+    second: Back_Button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GirlDoor_0
+      name: Back_Button_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 18
-        height: 24
+        width: 45
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6c07b1849cb50c00800000000000000
-      internalID: 866305849356127343
+      spriteID: 99aa9b323d56fbbd0800000000000000
+      internalID: -2612257301339723111
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GirlDoor_0: 866305849356127343
+      Back_Button_0: -2612257301339723111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
