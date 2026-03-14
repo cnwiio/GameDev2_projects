@@ -283,12 +283,15 @@ namespace TarodevController
                 if (GodMode) return;
                 if (animator != null) animator.SetTrigger("Death");
                 if (_rb.simulated) _rb.simulated = false;
+                SoundManager.Instance.PlaySFX("Hit");
                 StartCoroutine(RestartScenesAfterDelay(1.25f));
             }
 
             if (collision.CompareTag("Potion"))
             {
                 //Debug.Log(name + " hit a potion!");
+                SoundManager.Instance.PlaySFX("Potion");
+
                 oppositeValue *= -1;
                 IsFacingLeft = !IsFacingLeft;
                 Destroy(collision.gameObject);

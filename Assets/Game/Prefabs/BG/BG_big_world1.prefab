@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9013211939583267808}
   - component: {fileID: 8512546550247471722}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BG_Girl1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5307613464798967156}
   - component: {fileID: 7356620765876689816}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BG_Girl1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8830229837187614592}
   - component: {fileID: 510914784787939723}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BG_Girl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8318111467825914173}
   - component: {fileID: 3995375929434894341}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BG_Dog1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 396771849741060488}
   - component: {fileID: 650892790437030919}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BG_Dog2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
