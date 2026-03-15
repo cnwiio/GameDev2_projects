@@ -27,6 +27,7 @@ public class Goal : MonoBehaviour
             if (Target != null && collision.gameObject != Target) return;
             //Debug.Log("Goal reached!");
             //Debug.Log(collision.gameObject.name + " Has Reached the Goal!");
+            SoundManager.Instance.PlaySFX("Goal");
             collision.GetComponent<PlayerMovement>().ToggleEnble(false);
             IsReached = true;
         }

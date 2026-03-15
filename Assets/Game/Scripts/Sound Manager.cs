@@ -29,6 +29,10 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        PlayBGM("Level");
+    }
     public void PlayBGM(string soundName)
     {
         Sound s = Array.Find(bgmSounds, x => x.name == soundName);

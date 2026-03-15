@@ -211,6 +211,8 @@ public class PixelStageSelectManager : MonoBehaviour
             UpdateLevelNumbersOnButtons();
             UpdateUIFeedback();
         }
+
+        SoundManager.Instance.PlaySFX("Switch");
     }
 
     private void HandleSelection()
@@ -226,6 +228,7 @@ public class PixelStageSelectManager : MonoBehaviour
         if (!selectedLevel.isLocked)
         {
             //Debug.Log($"Loading level: {selectedLevel.number}");
+            SoundManager.Instance.PlaySFX("Click");
             PlayerPrefs.SetInt("EnterStage", 1);
             SceneManager.LoadScene(levelScenePrefix + selectedLevel.number);
         }
@@ -269,6 +272,8 @@ public class PixelStageSelectManager : MonoBehaviour
                 if (buttonTexts[i] != null) buttonTexts[i].color = isLocked ? lockedColor : normalColor;
             }
         }
+
+        SoundManager.Instance.PlaySFX("Hover");
     }
 
     private LevelData GetSelectedLevelData()

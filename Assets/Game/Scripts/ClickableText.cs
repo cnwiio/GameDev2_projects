@@ -43,6 +43,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             onLeftClick.Invoke();
         else if (eventData.button == PointerEventData.InputButton.Right)
             onRightClick.Invoke();
+        SoundManager.Instance.PlaySFX("Click");
     }
 
     // ฟังก์ชันนี้จะทำงานเมื่อ "นำเมาส์ไปชี้"
@@ -50,6 +51,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     {
         UpScale();
         ChangeColor();
+        SoundManager.Instance.PlaySFX("Hover");
     }
 
     // ฟังก์ชันนี้จะทำงานเมื่อ "นำเมาส์ออก"

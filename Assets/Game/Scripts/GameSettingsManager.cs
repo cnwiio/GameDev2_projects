@@ -8,6 +8,7 @@ public class GameSettingsManager : MonoBehaviour
     public TextMeshProUGUI resolutionText;
     public TextMeshProUGUI vsyncText;
     public TextMeshProUGUI fpsText;
+    public TextMeshProUGUI fullscreenText; // เพิ่มบรรทัดนี้
 
     [Header("Audio Text References")]
     public TextMeshProUGUI masterText;
@@ -28,10 +29,12 @@ public class GameSettingsManager : MonoBehaviour
         new Vector2Int(1920, 1080),  // Full HD
         new Vector2Int(2560, 1440)   // 2K
     };
-    private int currentResIndex = 2; // ให้เริ่มต้นที่ Full HD (Index ที่ 2)
+    private int currentResIndex = 0; // ให้เริ่มต้นที่ Full HD (Index ที่ 2)
 
     private string[] vsyncOptions = { "Off", "On" };
     private int currentVsyncIndex = 0;
+    private string[] fullscreenOptions = { "Windowed", "Full Screen" };
+    private int currentFullscreenIndex = 1; // ค่าเริ่มต้นให้เป็น 1 (Full Screen)
 
     private int[] fpsOptions = { 30, 60, 120, 144, -1 }; // -1 คือ ไม่จำกัด (Unlimited)
     private int currentFpsIndex = 1; // เริ่มที่ 60 FPS
@@ -62,6 +65,7 @@ public class GameSettingsManager : MonoBehaviour
         resolutionText.text = customResolutions[currentResIndex].x + " x " + customResolutions[currentResIndex].y;
         vsyncText.text = vsyncOptions[currentVsyncIndex];
         fpsText.text = fpsOptions[currentFpsIndex] == -1 ? "Unlimited" : fpsOptions[currentFpsIndex].ToString();
+        fullscreenText.text = fullscreenOptions[currentFullscreenIndex];
         // อัปเดตตัวเลข % ของเสียงทั้ง 4 หมวด
         masterText.text = (currentMasterLevel * 10) + "%";
         sfxText.text = (currentSfxLevel * 10) + "%";
@@ -87,6 +91,12 @@ public class GameSettingsManager : MonoBehaviour
     // ==========================================
     public void NextFPS() { currentFpsIndex = (currentFpsIndex + 1) % fpsOptions.Length; UpdateUITexts(); }
     public void PrevFPS() { currentFpsIndex = (currentFpsIndex - 1 + fpsOptions.Length) % fpsOptions.Length; UpdateUITexts(); }
+
+    // ==========================================
+    // ฟังก์ชันปรับโหมดหน้าจอ
+    // ==========================================
+    public void NextFullscreen() { currentFullscreenIndex = (currentFullscreenIndex + 1) % fullscreenOptions.Length; UpdateUITexts(); }
+    public void PrevFullscreen() { currentFullscreenIndex = (currentFullscreenIndex - 1 + fullscreenOptions.Length) % fullscreenOptions.Length; UpdateUITexts(); }
 
     // ==========================================
     // หมวดปรับเสียง (เพิ่ม Music และ Ambient)
@@ -124,8 +134,12 @@ public class GameSettingsManager : MonoBehaviour
     // ==========================================
     public void ApplyChanges()
     {
+        // 1. แปลงค่า Index เป็น True/False (1 คือ Full Screen, 0 คือ Windowed)
+        bool isFullscreen = (currentFullscreenIndex == 1);
+
+        // 2. แก้ไขบรรทัด SetResolution ให้ใช้ตัวแปร isFullscreen ที่เราสร้างขึ้น
         Vector2Int res = customResolutions[currentResIndex];
-        Screen.SetResolution(res.x, res.y, Screen.fullScreen);
+        Screen.SetResolution(res.x, res.y, isFullscreen);
         QualitySettings.vSyncCount = currentVsyncIndex;
         Application.targetFrameRate = fpsOptions[currentFpsIndex];
 
@@ -133,6 +147,7 @@ public class GameSettingsManager : MonoBehaviour
         PlayerPrefs.SetInt("ResIndex", currentResIndex);
         PlayerPrefs.SetInt("VsyncIndex", currentVsyncIndex);
         PlayerPrefs.SetInt("FpsIndex", currentFpsIndex);
+        PlayerPrefs.SetInt("FullscreenIndex", currentFullscreenIndex);
         PlayerPrefs.SetInt("MasterLevelUI", currentMasterLevel);
         PlayerPrefs.SetInt("SFXLevelUI", currentSfxLevel);
         PlayerPrefs.SetInt("MusicLevelUI", currentMusicLevel);
@@ -144,10 +159,11 @@ public class GameSettingsManager : MonoBehaviour
 
     private void LoadSettings()
     {
-        int savedResIndex = PlayerPrefs.GetInt("ResIndex", 2);
+        int savedResIndex = PlayerPrefs.GetInt("ResIndex", currentResIndex);
         currentResIndex = Mathf.Clamp(savedResIndex, 0, customResolutions.Length - 1);
         currentVsyncIndex = PlayerPrefs.GetInt("VsyncIndex", 0);
         currentFpsIndex = PlayerPrefs.GetInt("FpsIndex", 1);
+        currentFullscreenIndex = PlayerPrefs.GetInt("FullscreenIndex", 1);
 
         // โหลดข้อมูลโดยใช้ชื่อ Key ใหม่
         currentMasterLevel = PlayerPrefs.GetInt("MasterLevelUI", 10);

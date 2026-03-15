@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool DebugTransition;
 
     [Header("UI")]
-    [SerializeField] private GameObject PauseButton;
     [SerializeField] private GameObject PausePanel;
+    [SerializeField] private GameObject SettingPanel;
 
 
 
@@ -67,7 +67,10 @@ public class GameManager : MonoBehaviour
         {
             EnterLevel();
         }
-        
+
+        SoundManager.Instance.PlayAmbient("Rain", -1);
+        SoundManager.Instance.PlayAmbient("Wind", 1);
+        SoundManager.Instance.PlayBGM("Level");
     }
 
     // Update is called once per frame
@@ -196,8 +199,6 @@ public class GameManager : MonoBehaviour
     private void EnterLevel()
     {
         PlayerPrefs.SetInt("EnterStage", 0);
-        SoundManager.Instance.PlayAmbient("Rain", -1);
-        SoundManager.Instance.PlayAmbient("Wind", 1);
         StartCoroutine(StartTextAfterDelay(2f));
         StartCoroutine(PlayCam(0.05f));
     }
@@ -214,19 +215,27 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseButton.SetActive(!PauseButton.activeSelf);
+            SettingPanel.SetActive(false);
             PausePanel.SetActive(!PausePanel.activeSelf);
+            Pause(PausePanel.activeSelf);
         }
     }
-//    private void Quit()
-//    {
 
-//#if UNITY_EDITOR
-//        EditorApplication.isPlaying = false;
-//        PlayerPrefs.SetInt("EnterStage", 1);
-//#else
-//        Application.Quit();
-//#endif
+    public void Pause(bool pause)
+    {
+        Time.timeScale = pause ? 0.0f : 1.0f;
+        PausePanel.SetActive(pause);
+        if (!pause) SettingPanel.SetActive(false);
+    }
+    //    private void Quit()
+    //    {
 
-//    }
+    //#if UNITY_EDITOR
+    //        EditorApplication.isPlaying = false;
+    //        PlayerPrefs.SetInt("EnterStage", 1);
+    //#else
+    //        Application.Quit();
+    //#endif
+
+    //    }
 }
