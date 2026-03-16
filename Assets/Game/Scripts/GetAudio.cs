@@ -8,4 +8,9 @@ public class GetAudio : MonoBehaviour
     {
         soundManager.PlaySFX("Click");
     }
+
+    public void StopAmbient(string name)
+    {
+        soundManager.StopAmbient(name);
+    }
 }
