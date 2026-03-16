@@ -80,11 +80,6 @@ public class GameManager : MonoBehaviour
         SwapPlayer();
         CheckReset();
         CheckInputPause();
-
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            StartCoroutine(Playtransition());
-        }
         //ResetPlayer();
     }
 
@@ -125,7 +120,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SaveStageReached(nextLVL);
+        SaveStageReached(currentLVL);
         SceneManager.LoadScene(nextLVL);
     }
 

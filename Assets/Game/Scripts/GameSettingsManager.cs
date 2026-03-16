@@ -99,19 +99,19 @@ public class GameSettingsManager : MonoBehaviour
     public void PrevFullscreen() { currentFullscreenIndex = (currentFullscreenIndex - 1 + fullscreenOptions.Length) % fullscreenOptions.Length; UpdateUITexts(); }
 
     // ==========================================
-    // หมวดปรับเสียง (เพิ่ม Music และ Ambient)
+    // หมวดปรับเสียง (อัปเดตให้วนลูป 0 <-> 100%)
     // ==========================================
-    public void NextMaster() { if (currentMasterLevel < 10) currentMasterLevel++; UpdateUITexts(); ApplyVolumeRealtime(); }
-    public void PrevMaster() { if (currentMasterLevel > 0) currentMasterLevel--; UpdateUITexts(); ApplyVolumeRealtime(); }
+    public void NextMaster() { currentMasterLevel = (currentMasterLevel + 1) % 11; UpdateUITexts(); ApplyVolumeRealtime(); }
+    public void PrevMaster() { currentMasterLevel = (currentMasterLevel - 1 + 11) % 11; UpdateUITexts(); ApplyVolumeRealtime(); }
 
-    public void NextSFX() { if (currentSfxLevel < 10) currentSfxLevel++; UpdateUITexts(); ApplyVolumeRealtime(); }
-    public void PrevSFX() { if (currentSfxLevel > 0) currentSfxLevel--; UpdateUITexts(); ApplyVolumeRealtime(); }
+    public void NextSFX() { currentSfxLevel = (currentSfxLevel + 1) % 11; UpdateUITexts(); ApplyVolumeRealtime(); }
+    public void PrevSFX() { currentSfxLevel = (currentSfxLevel - 1 + 11) % 11; UpdateUITexts(); ApplyVolumeRealtime(); }
 
-    public void NextMusic() { if (currentMusicLevel < 10) currentMusicLevel++; UpdateUITexts(); ApplyVolumeRealtime(); }
-    public void PrevMusic() { if (currentMusicLevel > 0) currentMusicLevel--; UpdateUITexts(); ApplyVolumeRealtime(); }
+    public void NextMusic() { currentMusicLevel = (currentMusicLevel + 1) % 11; UpdateUITexts(); ApplyVolumeRealtime(); }
+    public void PrevMusic() { currentMusicLevel = (currentMusicLevel - 1 + 11) % 11; UpdateUITexts(); ApplyVolumeRealtime(); }
 
-    public void NextAmbient() { if (currentAmbientLevel < 10) currentAmbientLevel++; UpdateUITexts(); ApplyVolumeRealtime(); }
-    public void PrevAmbient() { if (currentAmbientLevel > 0) currentAmbientLevel--; UpdateUITexts(); ApplyVolumeRealtime(); }
+    public void NextAmbient() { currentAmbientLevel = (currentAmbientLevel + 1) % 11; UpdateUITexts(); ApplyVolumeRealtime(); }
+    public void PrevAmbient() { currentAmbientLevel = (currentAmbientLevel - 1 + 11) % 11; UpdateUITexts(); ApplyVolumeRealtime(); }
 
     private void ApplyVolumeRealtime()
     {

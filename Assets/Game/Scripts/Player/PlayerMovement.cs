@@ -85,11 +85,6 @@ namespace TarodevController
                 jumpToConsume = true;
                 _timeJumpWasPressed = _time;
             }
-
-            if (Input.GetKeyDown(KeyCode.F1))
-            {
-                GodMode = !GodMode;
-            }
         }
 
         private void FixedUpdate()

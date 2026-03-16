@@ -3,13 +3,20 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using TMPro; // สำคัญ: ต้องเพิ่มเพื่อให้ใช้งาน TextMeshPro ได้
 
-public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+// เปลี่ยนบรรทัด public class ... ให้มี IScrollHandler ต่อท้ายสุดแบบนี้
+public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IScrollHandler
 {
     [Tooltip("ใส่คำสั่งเมื่อคลิกซ้าย (เพิ่มค่า)")]
     public UnityEvent onLeftClick;
 
     [Tooltip("ใส่คำสั่งเมื่อคลิกขวา (ลดค่า)")]
     public UnityEvent onRightClick;
+
+    [Tooltip("ใส่คำสั่งเมื่อเลื่อนลูกกลิ้งขึ้น")]
+    public UnityEvent onScrollUp;
+
+    [Tooltip("ใส่คำสั่งเมื่อเลื่อนลูกกลิ้งลง")]
+    public UnityEvent onScrollDown;
 
     // ตัวแปรสำหรับเก็บค่าเริ่มต้นของ Text
     private TextMeshProUGUI TMPtext;
@@ -46,6 +53,8 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         SoundManager.Instance.PlaySFX("Click");
     }
 
+
+
     // ฟังก์ชันนี้จะทำงานเมื่อ "นำเมาส์ไปชี้"
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -59,6 +68,21 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     {
         DownScale();
         ResetColor();
+    }
+
+    public void OnScroll(PointerEventData eventData)
+    {
+        // scrollDelta.y จะเป็นบวกเมื่อเลื่อนขึ้น และเป็นลบเมื่อเลื่อนลง
+        if (eventData.scrollDelta.y > 0)
+        {
+            onScrollUp.Invoke();
+            SoundManager.Instance.PlaySFX("Click"); // เล่นเสียงคลิกตอนเลื่อนลูกกลิ้ง
+        }
+        else if (eventData.scrollDelta.y < 0)
+        {
+            onScrollDown.Invoke();
+            SoundManager.Instance.PlaySFX("Click"); // เล่นเสียงคลิกตอนเลื่อนลูกกลิ้ง
+        }
     }
 
     #region Hover Animation Methods (จากโค้ดของคุณ)
@@ -86,4 +110,10 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         TMPtext.color = intialColor;
     }
     #endregion
+
+    private void OnDisable()
+    {
+        DownScale();
+        ResetColor();
+    }
 }
