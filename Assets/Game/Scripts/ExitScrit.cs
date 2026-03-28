@@ -9,6 +9,7 @@ public class ExitScrit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (Panel == null) return;
             Panel.SetActive(true);
         }
     }
